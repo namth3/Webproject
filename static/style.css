@@ -1,18 +1,33 @@
 #thu{
-    padding:5px 7px;
+    padding:10px 15px;
 }
 #body{
-    background-color:rgb(144, 255, 218);
+    background-image: url("http://www.af-usa.org/seeimg/big/31/314353_laptop-wallpaper-tumblr.jpg");
+    background-size: 1463px;
 }
 #title{
     background-color:rgb(92, 104, 105);
 }
 #div{
-    background-color:rgb(255, 255, 255);
+    background-image: url("https://sample-videos.com/img/Sample-jpg-image-500kb.jpg");
+    background-size: 700px;
 }
+
 #super{
     color:rgb(235, 8, 121);
 }
 #height{
     height:430px;
+}
+#login1{
+    text-align: center;
+    padding:150px 600px;
+}
+#login2{
+    background-image: url("https://i.pinimg.com/originals/9b/a0/1d/9ba01df4c67988c025becc6d314c7383.jpg");
+    background-repeat: no-repeat;
+    background-size: 1463px;
+}
+#mo{
+    opacity: 0.9;
 }
