@@ -1,13 +1,17 @@
 from pymongo import MongoClient
-url = "mongodb+srv://namth3:MN1Cbt6BFOvUIExD@cluster0-kondi.mongodb.net/test?retryWrites=true"
 
-#1.connect
-client = MongoClient(url)
+uri = "mongodb+srv://c4e_travel:travel1@place-k07pp.mongodb.net/test?retryWrites=true"
+# Connect
+client = MongoClient(uri)
+
+# Get database
+db = client.travel
+
+#3.Get collection
+post_collection = db["BaiVietTongHop"] #collection
 
 
-#2. Get DB
-db = client.test
 
-#3. get collection
-food_collection = db["food"]
-user = db["user"]
+#6. Close connection
+def close():
+    client.close()
