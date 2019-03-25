@@ -13,7 +13,7 @@ user_collection = db_user["users"] #collection
 
 #3.Get collection
 post_collection = db["BaiVietTongHop"] #collection
-
+user = db["user"]
 
 
 
