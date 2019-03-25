@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
 body
 {
-    background-color: #1b1b1b;
-    padding-top: 40px;
+    font-family: 'Numans', sans-serif;
 }
 .form-signin {
     max-width: 280px;
@@ -12,13 +12,13 @@ body
 
 .input-group-addon
 {
-    background-color: rgb(50, 118, 177);
+    background-color:  #FFC312;
     border-color: rgb(40, 94, 142);
     color: rgb(255, 255, 255);
 }
 .form-control:focus
 {
-    background-color: rgb(50, 118, 177);
+    background-color: #FFC312;
     border-color: rgb(40, 94, 142);
     color: rgb(255, 255, 255);
 }
@@ -26,15 +26,16 @@ body
 opacity: 0.8;
 /*margin-top:30px;*/
 }
-.form-signup input[type="text"],.form-signup input[type="password"] { border: 1px solid rgb(50, 118, 177); }
+.form-signup input[type="text"],.form-signup input[type="password"] { border: 1px solid  #FFC312; }
 .fullscreen_bg {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
     background-size: cover;
-    background-position: 50% 50%;
-    background-image: url('http://blog.transfer-iphone-recovery.com/images/photo-with-blur-background.jpg');
-    background-repeat:repeat;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
   }
