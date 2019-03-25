@@ -32,3 +32,8 @@ Noi dung:
 -Tài khoản mongo: lecaocuong198@github.com - mk:lecaocuong198
 -userpassword: travel1
 ===================================
+Date: 2019-03-25
+Nguoi update: Cuong
+Noi dung: 
+- Chuc nang sign-up
+===================================

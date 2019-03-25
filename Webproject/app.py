@@ -1,7 +1,8 @@
 import os
 from flask import Flask, flash, request, redirect, url_for, render_template, session
-from db import user
+from db import *
 from bson import ObjectId
+from connect import signup_db
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
 
 
 def find_username(username):
-    user_list = user.find_one({"username":username})
+    user_list = user_collection.find_one({"username":username})
     return user_list
 
 
@@ -21,9 +22,6 @@ def home_page():
 
 
 
-@app.route("/signup")
-def sign_up():
-    return render_template("signup.html")
 
 @app.route("/login",  methods=["GET","POST"])
 
@@ -43,6 +41,29 @@ def login():
             session["token"] = u
             return  redirect("/")
 
+@app.route("/signup",  methods=["GET","POST"])
+
+def signup():
+    if request.method == "GET":
+        return render_template("signup.html")
+    elif request.method == "POST":
+        form = request.form
+        sign_name = form["First Name"]
+        sign_l_name = form["Last Name"]
+        sign_email = form["Email"]
+        sign_username = form["Username"]
+        sign_pass = form["Password"]
+        u_list = find_username(sign_username)
+        if u_list == None:
+            # if sign_email == None or sign_username == None or sign_pass == None:
+            #     return "Nhap day du du lieu"
+            # else:
+            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass)
+            return "Tao Tai Khoan Thanh Cong"
+            
+        else:
+            return "Nguoi Dung da ton tai"
+           
 
 @app.route("/post")
 
