@@ -5,15 +5,10 @@ uri = "mongodb+srv://c4e_travel:travel1@place-k07pp.mongodb.net/test?retryWrites
 client = MongoClient(uri)
 
 # Get database
-db = client.travel
-db_user = client.User
+db = client.User
 
 #3.Get collection
-user_collection = db_user["users"] #collection
-
-#3.Get collection
-post_collection = db["BaiVietTongHop"] #collection
-user = db["user"]
+user = db["users"] #collection
 
 
 

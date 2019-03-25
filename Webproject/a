@@ -1,0 +1,19 @@
+@app.route("/signup",  methods=["GET","POST"])
+
+def login():
+    if request.method == "GET":
+        return render_template("signup.html")
+    elif request.method == "POST":
+        form = request.form
+        f_name = form["First Name"]
+        f_l_name = form["Last Name"]
+        f_email = form["Email"]
+        f_pass = form["Password"]
+        u_list = find_username(u)
+        if u_list == None:
+            return "No such user"
+        elif u_list["password"] != p:
+            return "Wrong password"
+        else:
+            session["token"] = u
+            return  redirect("/")
