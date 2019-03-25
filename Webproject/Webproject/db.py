@@ -9,7 +9,7 @@ db = client.travel
 
 #3.Get collection
 post_collection = db["BaiVietTongHop"] #collection
-
+user = db["user"]
 
 
 #6. Close connection
