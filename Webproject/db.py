@@ -9,7 +9,14 @@ db = client.travel
 
 #3.Get collection
 post_collection = db["BaiVietTongHop"] #collection
+user = db["user"]
 
+
+#4. create new document
+new_user = {
+    "username" :"daihiep1707",
+    "password": "thanhninh"
+}
 
 
 #6. Close connection
