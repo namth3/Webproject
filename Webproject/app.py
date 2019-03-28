@@ -12,7 +12,7 @@ app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
 
 
 def find_username(username):
-    user_list = user_collection.find_one({"username":username})
+    user_list = user_collection.find_one({"Username":username})
     return user_list
 
 @app.route("/")
@@ -32,11 +32,13 @@ def login():
         u_list = find_username(u)
         if u_list == None:
             return "No such user"
-        elif u_list["password"] != p:
+        elif u_list["Password"] != p:
             return "Wrong password"
         else:
+            id_user = u_list["_id"]
             session["token"] = u
-            return  redirect("/")
+            a = session["token"]
+            return  redirect(''),
 
 @app.route("/signup",  methods=["GET","POST"])
 
