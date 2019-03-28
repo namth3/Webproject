@@ -12,7 +12,7 @@
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
     #map {
-      height: 600px;
+      height: 700px;
       margin: 1.1%;
     }
     /* Optional: Makes the sample page fill the window. */
@@ -46,46 +46,74 @@
         </ol>
       </nav>
 
-        <h2>Google Map here</h2>
+<h2>Google Map here</h2>
         
-    <div id="map"></div>
-      <script>
-
+<div id="map"></div>
+  <script>
+    var locations = [
+      ['Đà Lạt', 11.939682, 108.441988, 4],
+      ['Thành Phố Hồ Chí Minh', 10.775313, 106.706456, 5],
+      ['Đà Nẵng', 16.063048, 108.229772, 3],
+      ['Hà Nội', 21.029545, 105.851479, 2],
+      ['Thị Trấn Sapa', 22.335549, 103.842246, 1]
+    ];  
       // When the user clicks the marker, an info window opens.
 
       function initMap() {
         var hanoi = {lat: 21.029545, lng: 105.851479};
+        var danang = {lat: 16.063048, lng: 108.229772};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 7,
           center: hanoi
         });
+        setMarkers(map);
+        
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+      
+      }
 
-        var contentString = '<div id="content">'+
+      function setMarkers(map) {
+        for (i = 0; i < locations.length; i++) {
+          var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Hanoi</h1>'+
+            '<h1 id="firstHeading" class="firstHeading">{{ location[i] }}</h1>'+'<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Th%C3%A1p_R%C3%B9a_6.jpg" alt = "Hanoi" style="width:128px;height:128px>'+
             '<div id="bodyContent">'+
-            '<p><b>Hanoi</b>, is Vietnam\'s capital and second largest city by population (7.7 million in 2015). The city mostly lies on the right bank of the <b>Red River</b>,' +
+            '<p><b>{{ location[i] }}</b>, is Vietnam\'s capital and second largest city by population (7.7 million in 2015). The city mostly lies on the right bank of the <b>Red River</b>,' +
             'From 1010 until 1802, it was the most important political centre of Vietnam'+
             '<p> <a href="https://www.google.com" target="_blank">'+
             '<input type="button" value="Learn more" />'+'</a>'+ '</p>'+
             '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-          position: hanoi,
+            '</div>';  
+          marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
           map: map,
-          title: 'Uluru (Ayers Rock)'
         });
-        marker.addListener('click', function() {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-          infowindow.open(map, marker);
-        });
+          marker.addListener('click', function() {
+            if(!this.infoWindow) {
+              this.infoWindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+            }
+            map.setZoom(9);
+            map.setCenter(marker.getPosition());
+            this.infoWindow.open(map,this);
+          })
+        }
+
+        // var marker = new google.maps.Marker({
+        //   position: hanoi,
+        //   map: map,
+        //   title: 'Hà Nội'
+        // });
+
+        // marker.addListener('click', function() {
+        //   infowindow.open(map, marker);
+        // map.setZoom(10);
+        // map.setCenter(marker.getPosition());
+        // });
       }
     </script>
     <script async defer
