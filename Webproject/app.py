@@ -12,15 +12,22 @@ app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
 
 
 def find_username(username):
-    user_list = user_collection.find_one({"username":username})
+    user_list = user_collection.find_one({"Username":username})
     return user_list
 
 
 
 @app.route("/")
+<<<<<<< HEAD
 def home_page():
     locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
     return render_template("index.html", locati = locations)
+=======
+def home_page(<id>):
+    return render_template("index.html")
+
+
+>>>>>>> f489dbee31b102f19617bec0df7dee7449ae8d3f
 
 
 @app.route("/login",  methods=["GET","POST"])
@@ -35,11 +42,13 @@ def login():
         u_list = find_username(u)
         if u_list == None:
             return "No such user"
-        elif u_list["password"] != p:
+        elif u_list["Password"] != p:
             return "Wrong password"
         else:
+            id_user = u_list["_id"]
             session["token"] = u
-            return  redirect("/")
+            a = session["token"]
+            return  redirect(''),
 
 @app.route("/signup",  methods=["GET","POST"])
 def signup():
