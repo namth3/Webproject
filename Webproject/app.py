@@ -16,11 +16,11 @@ def find_username(username):
     return user_list
 
 
+
 @app.route("/")
 def home_page():
-    return render_template("index.html")
-
-
+    locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
+    return render_template("index.html", locati = locations)
 
 
 @app.route("/login",  methods=["GET","POST"])
@@ -42,7 +42,6 @@ def login():
             return  redirect("/")
 
 @app.route("/signup",  methods=["GET","POST"])
-
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
