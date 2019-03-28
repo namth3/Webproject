@@ -3,8 +3,8 @@ from flask import Flask, flash, request, redirect, url_for, render_template, ses
 from db import *
 from bson import ObjectId
 from connect import signup_db
-
-
+#from db import post_collection,user
+from deff import *
 app = Flask(__name__)
 app.config
 app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
@@ -15,12 +15,9 @@ def find_username(username):
     user_list = user_collection.find_one({"username":username})
     return user_list
 
-
 @app.route("/")
 def home_page():
-    return render_template("index.html")
-
-
+    return render_template("index.html",a=a,b=b,c=c,d=d,e=e)
 
 
 @app.route("/login",  methods=["GET","POST"])

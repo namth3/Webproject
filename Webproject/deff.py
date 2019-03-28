@@ -1,12 +1,42 @@
 from db import post_collection,user
 from bson import ObjectId
-
-
+import random
 listt=post_collection.find()
-if __name__=="__main__":
-    for i in listt:
-        print (i["Title"])
+nar=[]
+no=[]
 
+for i in listt:
+    nar.append(i["Title"])
+a=(random.choices(nar))
+no.append(a)
+while(True):
+    b=(random.choices(nar))
+    if b not in no:
+        break
+no.append(b)
+
+while(True):
+    c=(random.choices(nar))
+    if c not in no:
+        break
+no.append(c)
+
+while(True):
+    d=(random.choices(nar))
+    if d not in no:
+        break
+no.append(d)
+
+while(True):
+    e=(random.choices(nar))
+    if e not in no:
+        break
+no.append(e)
+
+
+
+# if __name__=="__main__":
+#     print(a)
 # def add_new(name,price):
 #     new_food={
 #         "name":name,
