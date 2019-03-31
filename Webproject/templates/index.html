@@ -37,7 +37,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="title">
           <li class="breadcrumb-item" ><a href="/">Home</a></li>
-           <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+          <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
           <li class="breadcrumb-item"><a href="/about"></a>About</li>
           <li class="breadcrumb-item active" aria-current="page">
             <a href="/login">Login</a>
@@ -47,9 +47,9 @@
 
 <!-- <<<<<<< HEAD
         <h3 style="color:rgb(174, 199, 193); padding: 15px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ">Google Map here</h3> -->
-      <div style="text-align:center">
+      <!-- <div style="text-align:center"> -->
         <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2646.2531389455903!2d-89.23024619999998!3d48.4516724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5923dbfe697737%3A0xc9d925c9bc9573fa!2s116+Bruce+St%2C+Thunder+Bay%2C+ON+P7A+5W6!5e0!3m2!1sen!2sca!4v1424272264157"  -->
-        width= 97.8% height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <!-- width= 97.8% height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
       </div>
 
         <h2 style="padding: 15px;">Google Map here</h2>
@@ -103,8 +103,7 @@
                 content: contentString
               });
             }
-            map.setZoom(9);
-            map.setCenter(marker.getPosition());
+            map.setZoom(11);
             this.infoWindow.open(map,this);
           })
         }
@@ -133,18 +132,18 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body" id="div">
-                  <img src="https://i.ytimg.com/vi/1qT2loeqEFc/maxresdefault.jpg" class="card-img-top" alt="..." id="height">
-                <h5 class="card-title" id="super">{{a}}</h5>
+                  <img src={{a2[0]}} class="card-img-top" alt="..." id="height">
+                <h5 class="card-title" id="super">{{a1}}</h5>
                 <p class="card-text" >Đây là đoạn giới thiệu ...</p>
-                <a href="#" class="btn btn-primary">Show more</a>
+                <a href="/image" class="btn btn-primary">Show more</a>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body" id="div">
-                  <img src="https://i.ytimg.com/vi/ItbSlqpzSsM/maxresdefault.jpg" class="card-img-top" alt="..." style="height: 428px" >
-                <h5 class="card-title" id="super">{{b}}</h5>
+                  <img src={{b2[0]}} class="card-img-top" alt="..." style="height: 428px" >
+                <h5 class="card-title" id="super">{{b1}}</h5>
                 <p class="card-text">Đây là đoạn giới thiệu ...</p>
                 <a href="#" class="btn btn-primary">Show more</a>
               </div>
@@ -157,8 +156,8 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="div">
-                    <img src="https://media2.s-nbcnews.com/j/streams/2013/May/130513/1C7355339-130513-betsy-dan-paris.social_share_1024x768_scale.jpg" class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title">{{c}}</h5>
+                    <img src={{c2[0]}} class="card-img-top" alt="..." id="height"> 
+                  <h5 class="card-title">{{c1}}</h5>
                   <p class="card-text">Đây là đoạn giới thiệu ...</p>
                   <a href="#" class="btn btn-primary">Show more</a>
                 </div>
@@ -167,8 +166,8 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="div">
-                    <img src="https://www.fodors.com/wp-content/uploads/2017/10/HERO_UltimateLondon_Hero_shutterstock412054315.jpg" class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title">{{d}}</h5>
+                    <img src={{d2[0]}} class="card-img-top" alt="..." id="height"> 
+                  <h5 class="card-title">{{d1}}</h5>
                   <p class="card-text">Đây là đoạn giới thiệu ...</p>
                   <a href="#" class="btn btn-primary">Show more</a>
                 </div>
@@ -185,8 +184,8 @@
               <div class="col-sm-6">
                 <div class="card">
                   <div class="card-body" id="div">
-                      <img src="http://khoahocphattrien.vn/Images/Uploaded/Share/2016/12/06/0053.jpg" class="card-img-top" alt="..." id="height">
-                    <h5 class="card-title">{{e}}</h5>
+                      <img src={{e2[0]}} class="card-img-top" alt="..." id="height">
+                    <h5 class="card-title">{{e1}}</h5>
                     <p class="card-text">Đây là đoạn giới thiệu ...</p>
                     <a href="#" class="btn btn-primary">Show more</a>
                   </div>

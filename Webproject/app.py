@@ -9,19 +9,20 @@ app = Flask(__name__)
 app.config
 app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
 
-
-
 def find_username(username):
     user_list = user_collection.find_one({"Username":username})
     return user_list
 
 @app.route("/")
 def home_page():
-    return render_template("index.html",a=a,b=b,c=c,d=d,e=e)
+    locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
+    return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,)
 
+@app.route("/image")
+def image():
+    return render_template("image.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,)
 
 @app.route("/login",  methods=["GET","POST"])
-
 def login():
     if request.method == "GET":
         return render_template("login.html")
@@ -41,7 +42,6 @@ def login():
             return  redirect(''),
 
 @app.route("/signup",  methods=["GET","POST"])
-
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
