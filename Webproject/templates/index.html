@@ -36,18 +36,8 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="title">
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-            <li class="breadcrumb-item" ><a href="/post">Home page</a></li>
-=======
-            <li class="breadcrumb-item" ><a href="/index">Home</a></li>
->>>>>>> 24809b7ae9d8598389f2fc2a1a0b0f26f15e0395
-            <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
-=======
           <li class="breadcrumb-item" ><a href="/">Home</a></li>
           <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
->>>>>>> 4a649147d36c9d435eafe80791c914dc4c2f337b
           <li class="breadcrumb-item"><a href="/about"></a>About</li>
           <li class="breadcrumb-item active" aria-current="page">
             <a href="/login">Login</a>
@@ -74,7 +64,6 @@
       ['Thị Trấn Sapa', 22.335549, 103.842246, 1]
     ];  
       // When the user clicks the marker, an info window opens.
-
       function initMap() {
         var hanoi = {lat: 21.029545, lng: 105.851479};
         var danang = {lat: 16.063048, lng: 108.229772};
@@ -89,7 +78,6 @@
         });
       
       }
-
       function setMarkers(map) {
         for (i = 0; i < locations.length; i++) {
           var contentString = '<div id="content">'+
@@ -117,13 +105,11 @@
             this.infoWindow.open(map,this);
           })
         }
-
         // var marker = new google.maps.Marker({
         //   position: hanoi,
         //   map: map,
         //   title: 'Hà Nội'
         // });
-
         // marker.addListener('click', function() {
         //   infowindow.open(map, marker);
         // map.setZoom(10);
