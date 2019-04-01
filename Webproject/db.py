@@ -6,6 +6,10 @@ client = MongoClient(uri)
 
 # Get database
 db = client.travel
+db_user = client.User
+
+#3.Get collection
+user_collection = db_user["users"] #collection
 
 #3.Get collection
 post_collection = db["BaiVietTongHop"] #collection

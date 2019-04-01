@@ -1,8 +1,14 @@
 import os
+<<<<<<< HEAD
 from flask import Flask, flash, request, redirect, url_for, render_template, session, send_from_directory
 from werkzeug.utils import secure_filename
 from db import user
+=======
+from flask import Flask, flash, request, redirect, url_for, render_template, session
+from db import *
+>>>>>>> 24809b7ae9d8598389f2fc2a1a0b0f26f15e0395
 from bson import ObjectId
+from connect import signup_db
 
 app = Flask(__name__)
 app.config
@@ -17,6 +23,12 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+<<<<<<< HEAD
+=======
+def find_username(username):
+    user_list = user_collection.find_one({"username":username})
+    return user_list
+>>>>>>> 24809b7ae9d8598389f2fc2a1a0b0f26f15e0395
 
 
 # Trang chủ
@@ -25,10 +37,14 @@ def home_page():
     return render_template("index.html")
 
 
+<<<<<<< HEAD
 # Chức năng đăng ký cho người dùng
 @app.route("/signup")
 def sign_up():
     return render_template("signup.html")
+=======
+
+>>>>>>> 24809b7ae9d8598389f2fc2a1a0b0f26f15e0395
 
 # Chức năng login
 def find_username(username):
@@ -52,7 +68,38 @@ def login():
             session["token"] = u
             return  redirect("/")
 
+<<<<<<< HEAD
 # Trang giới thiệu thành viên nhóm
+=======
+@app.route("/signup",  methods=["GET","POST"])
+
+def signup():
+    if request.method == "GET":
+        return render_template("signup.html")
+    elif request.method == "POST":
+        form = request.form
+        sign_name = form["First Name"]
+        sign_l_name = form["Last Name"]
+        sign_email = form["Email"]
+        sign_username = form["Username"]
+        sign_pass = form["Password"]
+        u_list = find_username(sign_username)
+        if u_list == None:
+            # if sign_email == None or sign_username == None or sign_pass == None:
+            #     return "Nhap day du du lieu"
+            # else:
+            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass)
+            return "Tao Tai Khoan Thanh Cong"
+            
+        else:
+            return "Nguoi Dung da ton tai"
+           
+
+@app.route("/post")
+def new_post():
+    return render_template("post.html")
+
+>>>>>>> 24809b7ae9d8598389f2fc2a1a0b0f26f15e0395
 @app.route("/about")
 def about():
     return render_template("about.html")
