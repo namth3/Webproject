@@ -1,67 +1,81 @@
 from db import post_collection,user
 from bson import ObjectId
 import random
-listt=post_collection.find()
-nar=[]
-no=[]
+listt=post_collection.find().sort([("_id", -1), ("date", -1)])
 
+
+def add(title,link1,link2,link3,link4,link5,link6,content):
+    new={
+        "Title":title,
+        "img_link":[link1,link2,link3,link4,link5,link6],
+        "content":content,
+    }
+    post_collection.insert_one(new)
+# if __name__=="__main__":
+#     add("what do you mean","https://phongvu.vn/cong-nghe/wp-content/uploads/2018/07/hinh-nen-full-hd-cho-laptop-13.jpg",
+#     "http://nvhb.net/wp-content/uploads/2018/09/Autumn-23.jpg",
+#     "https://www.sony.com.ph/image/bc6d25fa6371c2899ce704a2bed7614c?fmt=png-alpha&wid=960",
+#     "https://avatars.mds.yandex.net/get-pdb/225396/104d1bfc-b497-443a-b488-1ca4711de18f/s1200",
+#     "http://yodobi.com/4k-Wallpapers/4k-wallpapers-mobile-Is-4K-Wallpaper.jpg",
+#     "https://i.imgur.com/EdAGGFS.jpg",
+#     " day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung day la noi dung")
+
+nar=[]
 for i in listt:
     nar.append(i["_id"])
-a=(random.choices(nar))
-no.append(a[0])
-while(True):
-    b=(random.choices(nar))
-    if b not in no:
-        break
-no.append(b[0])
-
-while(True):
-    c=(random.choices(nar))
-    if c not in no:
-        break
-no.append(c[0])
-
-while(True):
-    d=(random.choices(nar))
-    if d not in no:
-        break
-no.append(d[0])
-
-while(True):
-    e=(random.choices(nar))
-    if e not in no:
-        break
-no.append(e[0])
-
 def get_by_id(id):
     f=post_collection.find_one({'_id': ObjectId(id)})
     return f
 
 
-a=get_by_id(no[0])
+a=get_by_id(nar[0])
 a1=a["Title"]
 a2=a["img_link"]
+content1=a["content"]
 
 
-b=get_by_id(no[2])
+b=get_by_id(nar[1])
 b1=b["Title"]
 b2=b["img_link"]
+content2=b["content"]
 
-c=get_by_id(no[3])
+c=get_by_id(nar[2])
 c1=c["Title"]
 c2=c["img_link"]
+content3=c["content"]
 
-d=get_by_id(no[0])
+d=get_by_id(nar[3])
 d1=d["Title"]
 d2=d["img_link"]
+content4=d["content"]
 
-e=get_by_id(no[4])
+e=get_by_id(nar[4])
 e1=e["Title"]
 e2=e["img_link"]
+content5=e["content"]
+
+f=get_by_id(nar[5])
+f1=f["Title"]
+f2=f["img_link"]
+content6=f["content"]
+
+g=get_by_id(nar[6])
+g1=g["Title"]
+g2=g["img_link"]
+content7=g["content"]
+
+h=get_by_id(nar[7])
+h1=h["Title"]
+h2=h["img_link"]
+content8=h["content"]
+
+
 
 # def delete_by_id(id):
 #     post_collection.delete_one({'_id': ObjectId(id)})
-#delete_by_id(nar[0])
+
+# for i in range(20):
+#     delete_by_id(nar[i])
 
 # ss=get_by_id(a[0])
 # print (ss["img_link"][3])
