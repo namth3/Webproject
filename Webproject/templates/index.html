@@ -59,7 +59,6 @@
       ['Thị Trấn Sapa', 22.335549, 103.842246, 1]
     ];  
       // When the user clicks the marker, an info window opens.
-
       function initMap() {
         var hanoi = {lat: 21.029545, lng: 105.851479};
         var danang = {lat: 16.063048, lng: 108.229772};
@@ -74,7 +73,6 @@
         });
       
       }
-
       function setMarkers(map) {
         for (i = 0; i < locations.length; i++) {
           var contentString = '<div id="content">'+
@@ -102,13 +100,11 @@
             this.infoWindow.open(map,this);
           })
         }
-
         // var marker = new google.maps.Marker({
         //   position: hanoi,
         //   map: map,
         //   title: 'Hà Nội'
         // });
-
         // marker.addListener('click', function() {
         //   infowindow.open(map, marker);
         // map.setZoom(10);
