@@ -19,6 +19,12 @@ user = db["user"]
 # for i in listt:
 #     print (i["Title"])
 
+#4. create new document
+new_user = {
+    "username" :"daihiep1707",
+    "password": "thanhninh"
+}
+
 
 #6. Close connection
 def close():

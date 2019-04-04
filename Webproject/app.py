@@ -3,19 +3,15 @@ from flask import Flask, flash, request, redirect, url_for, render_template, ses
 from db import *
 from bson import ObjectId
 from connect import signup_db
-
-
+#from db import post_collection,user
+from deff import *
 app = Flask(__name__)
-app.config
+
 app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
-
-
 
 def find_username(username):
     user_list = user_collection.find_one({"Username":username})
     return user_list
-
-
 
 @app.route("/")
 def home_page():
@@ -36,7 +32,7 @@ def login():
         elif u_list["Password"] != p:
             return "Wrong password"
         else:
-            id_user = u_list["_id"]
+            # id_user = u_list["_id"]
             session["token"] = u
             a = session["token"]
             return redirect("/")
@@ -66,8 +62,18 @@ def signup():
 
 @app.route("/post")
 def new_post():
-    return render_template("post.html")
+    if "token" in session:
+        # if request.method == "GET":
+        #     return render_template("post.html")
+        # elif request.method == "POST":
+        #     form = request.form
+        #     n = form["place"]
+        #     p = form["content"]
+        return render_template("post.html")
+    else:
+        return "Please login!"
 
+    
 @app.route("/about")
 def about():
     return render_template("about.html")

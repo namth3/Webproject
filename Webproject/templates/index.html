@@ -37,7 +37,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="title">
           <li class="breadcrumb-item" ><a href="/">Home</a></li>
-           <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+          <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
           <li class="breadcrumb-item"><a href="/about"></a>About</li>
           <li class="breadcrumb-item active" aria-current="page">
             <a href="/login">Login</a>
@@ -45,7 +45,9 @@
         </ol>
       </nav>
 
-<h2>Google Map here</h2>
+
+
+        <h2 style="padding: 15px;">Google Map here</h2>
         
 <div id="map"></div>
   <script>
@@ -57,7 +59,6 @@
       ['Thị Trấn Sapa', 22.335549, 103.842246, 1]
     ];  
       // When the user clicks the marker, an info window opens.
-
       function initMap() {
         var hanoi = {lat: 21.029545, lng: 105.851479};
         var danang = {lat: 16.063048, lng: 108.229772};
@@ -72,7 +73,6 @@
         });
       
       }
-
       function setMarkers(map) {
         for (i = 0; i < locations.length; i++) {
           var contentString = '<div id="content">'+
@@ -100,13 +100,11 @@
             this.infoWindow.open(map,this);
           })
         }
-
         // var marker = new google.maps.Marker({
         //   position: hanoi,
         //   map: map,
         //   title: 'Hà Nội'
         // });
-
         // marker.addListener('click', function() {
         //   infowindow.open(map, marker);
         // map.setZoom(10);
@@ -125,20 +123,20 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body" id="div">
-                  <img src="https://turkishairlines.ssl.cdn.sdlmedia.com/image/636062397404426260NC.jpg" class="card-img-top" alt="..." id="height">
-                <h5 class="card-title" id="super">Tokyo</h5>
+                  <img src={{a2[0]}} class="card-img-top" alt="..." id="height">
+                <h5 class="card-title" id="super">{{a1}}</h5>
                 <p class="card-text" >Đây là đoạn giới thiệu ...</p>
-                <a href="#" class="btn btn-primary">Show more</a>
+                <a href="/image1" class="btn btn-primary">Show more</a>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body" id="div">
-                  <img src="https://i.ytimg.com/vi/ItbSlqpzSsM/maxresdefault.jpg" class="card-img-top" alt="..." style="height: 428px" >
-                <h5 class="card-title" id="super">Ha Noi</h5>
+                  <img src={{b2[0]}} class="card-img-top" alt="..." style="height: 428px" >
+                <h5 class="card-title" id="super">{{b1}}</h5>
                 <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                <a href="#" class="btn btn-primary">Show more</a>
+                <a href="/image2" class="btn btn-primary">Show more</a>
               </div>
             </div>
           </div>
@@ -149,20 +147,20 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="div">
-                    <img src="https://media2.s-nbcnews.com/j/streams/2013/May/130513/1C7355339-130513-betsy-dan-paris.social_share_1024x768_scale.jpg" class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title">Paris</h5>
+                    <img src={{c2[0]}} class="card-img-top" alt="..." id="height"> 
+                  <h5 class="card-title" id="super">{{c1}}</h5>
                   <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                  <a href="#" class="btn btn-primary">Show more</a>
+                  <a href="/image3" class="btn btn-primary">Show more</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body" id="div">
-                    <img src="https://www.fodors.com/wp-content/uploads/2017/10/HERO_UltimateLondon_Hero_shutterstock412054315.jpg" class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title">London</h5>
+                    <img src={{d2[0]}} class="card-img-top" alt="..." id="height"> 
+                  <h5 class="card-title" id="super">{{d1}}</h5>
                   <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                  <a href="#" class="btn btn-primary">Show more</a>
+                  <a href="image4" class="btn btn-primary">Show more</a>
                 </div>
               </div>
             </div>
@@ -177,20 +175,20 @@
               <div class="col-sm-6">
                 <div class="card">
                   <div class="card-body" id="div">
-                      <img src="http://khoahocphattrien.vn/Images/Uploaded/Share/2016/12/06/0053.jpg" class="card-img-top" alt="..." id="height">
-                    <h5 class="card-title">Berlin</h5>
+                      <img src={{e2[0]}} class="card-img-top" alt="..." id="height">
+                    <h5 class="card-title" id="super">{{e1}}</h5>
                     <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                    <a href="#" class="btn btn-primary">Show more</a>
+                    <a href="image5" class="btn btn-primary">Show more</a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="card">
                   <div class="card-body" id="div">
-                      <img src="http://khoahocphattrien.vn/Images/Uploaded/Share/2016/12/06/2.jpg" class="card-img-top" alt="..." id="height">
-                    <h5 class="card-title">Islamabad </h5>
+                      <img src={{f2[0]}} class="card-img-top" alt="..." id="height">
+                    <h5 class="card-title" id="super">{{f1}}</h5>
                     <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                    <a href="#" class="btn btn-primary">Show more</a>
+                    <a href="image6" class="btn btn-primary">Show more</a>
                   </div>
                 </div>
               </div>
@@ -204,20 +202,20 @@
                 <div class="col-sm-6">
                   <div class="card">
                     <div class="card-body" id="div">
-                        <img src="http://khoahocphattrien.vn/Images/Uploaded/Share/2016/12/06/7807.jpg" class="card-img-top" alt="..." id="height">
-                      <h5 class="card-title">Ottawa</h5>
+                        <img src={{g2[0]}} class="card-img-top" alt="..." id="height">
+                      <h5 class="card-title" id="super">{{g1}}</h5>
                       <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                      <a href="#" class="btn btn-primary">Show more</a>
+                      <a href="image7" class="btn btn-primary">Show more</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="card">
                     <div class="card-body" id="div">
-                        <img src="http://khoahocphattrien.vn/Images/Uploaded/Share/2016/12/06/10.jpg" class="card-img-top" alt="..." id="height">
-                      <h5 class="card-title">Athens </h5>
+                        <img src={{h2[0]}} class="card-img-top" alt="..." id="height">
+                      <h5 class="card-title" id="super">{{h1}} </h5>
                       <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                      <a href="#" class="btn btn-primary">Show more</a>
+                      <a href="image8" class="btn btn-primary">Show more</a>
                     </div>
                   </div>
                 </div>
