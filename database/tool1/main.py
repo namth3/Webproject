@@ -22,4 +22,5 @@ for i in range(1,20):
                 p = a["post"]
                 # content = a["post"]
                 add_post(title,img,p)
+                
         

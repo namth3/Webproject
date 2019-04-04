@@ -9,15 +9,15 @@ def main_web(link):
     # conn = urlopen(req)
 
     soup = BeautifulSoup(pageContent, "html.parser")
-    paging = soup.find("div", {"id": "breaking-news"})
-    ul = paging.find("ul")
-    li_list = ul.find_all('li')
+    paging = soup.find_all("h2", {"class": "post-box-title"})
+    # ul = paging.find("ul")
+    # li_list = ul.find_all('li')
 
 
     new_list = []
-    for li in li_list:
-        a = li.a
-        link = url + a["href"]
+    for link_p in paging:
+        a = link_p.a
+        link = a["href"]
         title = a.string
         news = {
             "link":link,

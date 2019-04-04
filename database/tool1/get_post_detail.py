@@ -4,7 +4,7 @@ def get_post(link):
     from urllib.request import Request, urlopen
     from bs4 import BeautifulSoup
     import json
-    url = ("https://baodulich.com/viet-nam/kham-pha-moi-ngoc-ngach-o-hoi-an-chi-trong-1-ngay/")
+    url = (link)
     content = urlopen(url).read()
     pageContent = content.decode("utf8")
 
@@ -21,7 +21,7 @@ def get_post(link):
     post = ""
     for tag in soup_c.find_all('p'):
         if tag.img:
-            print (tag.img['alt'], tag.img['src'])
+           x = 0
         else:
             post += "\n" + tag.getText()
 
