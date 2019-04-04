@@ -18,20 +18,11 @@ def find_username(username):
 
 
 @app.route("/")
-<<<<<<< HEAD
 def home_page():
-    locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
-    return render_template("index.html", locati = locations)
-=======
-def home_page(<id>):
     return render_template("index.html")
 
 
->>>>>>> f489dbee31b102f19617bec0df7dee7449ae8d3f
-
-
 @app.route("/login",  methods=["GET","POST"])
-
 def login():
     if request.method == "GET":
         return render_template("login.html")
@@ -48,7 +39,7 @@ def login():
             id_user = u_list["_id"]
             session["token"] = u
             a = session["token"]
-            return  redirect(''),
+            return redirect("/")
 
 @app.route("/signup",  methods=["GET","POST"])
 def signup():
