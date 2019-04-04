@@ -17,20 +17,7 @@ locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nộ
 
 @app.route("/")
 def home_page():
-<<<<<<< HEAD
-# <<<<<<< HEAD
-    
-#      return render_template("index.html")
-
-
-
-# =======
-#     locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
-#     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
-=======
-    # locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
->>>>>>> 1b8b2963f94b3a7342f47c2ccf0f4a82c0e67759
 
 @app.route("/image1")
 def image1():
