@@ -17,8 +17,9 @@ def find_username(username):
 
 
 @app.route("/")
-def home_page(<id>):
-    return render_template("index.html")
+def home_page():
+    
+     return render_template("index.html")
 
 
 
@@ -38,10 +39,14 @@ def login():
         elif u_list["Password"] != p:
             return "Wrong password"
         else:
-            id_user = u_list["_id"]
+            # id_user = u_list["_id"]
             session["token"] = u
-            a = session["token"]
-            return  redirect(''),
+            # a = session["token"]
+            return  redirect('/<id>')
+
+
+
+
 
 @app.route("/signup",  methods=["GET","POST"])
 
@@ -67,9 +72,18 @@ def signup():
             return "Nguoi Dung da ton tai"
            
 
-@app.route("/post")
-def new_post():
-    return render_template("post.html")
+# @app.route("/post",methods = ["GET","POST"])
+# def new_post():
+#     if "token" in session:
+#         if request.methods == "GET":
+#             return render_template("post.html")
+#          elif request.methods == "POST":
+#             form = request.form
+#             n = form["place"]
+#             p = form["content"]
+#             food.add_food(n,p)
+
+#     return render_template("post.html")
 
 @app.route("/about")
 def about():
