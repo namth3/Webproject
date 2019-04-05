@@ -43,11 +43,6 @@ def image7():
 @app.route("/image8")
 def image8():
     return render_template("image8.html",h2=h2,content8=content8)
-<<<<<<< HEAD
-# >>>>>>> f5fa5a29c3513251b86d4849367add7aca23e28e
-    return "Hello"
-=======
->>>>>>> 1b8b2963f94b3a7342f47c2ccf0f4a82c0e67759
 
 @app.route("/login",  methods=["GET","POST"])
 def login():
@@ -124,6 +119,11 @@ def logout():
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
    return render_template('upload.html')
+
+@app.route("/Dashboard")
+def Dashboard():
+    return render_template("Dashboard.html",a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+
 
 if __name__ == '__main__':
    app.run(debug = True)
