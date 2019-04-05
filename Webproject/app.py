@@ -3,6 +3,8 @@ from flask import Flask, flash, request, redirect, url_for, render_template, ses
 from db import *
 from bson import ObjectId
 from connect import signup_db
+import random
+from up_user import add_user_post
 #from db import post_collection,user
 from deff import *
 app = Flask(__name__)
@@ -91,20 +93,29 @@ def signup():
             return "Nguoi Dung da ton tai"
            
 
-@app.route("/post")
+@app.route("/post", methods = ["GET", "POST"])
 def new_post():
     if "token" in session:
-        if request.method == "GET":
-            return render_template("post.html")
-        elif request.method == "POST":
+        
+        if request.method == "POST":
             form = request.form
-            n = form["place"]
-            p = form["content"]
-        return render_template("post.html")
+            Title = form["Title"]
+            Location = form["Location"]
+            Name = form["Content"]
+            Vehicle = form["Vehicle"]
+            img_file = request.form['base64']
+            tipsfortravel = ["tipsfortravel"]
+            if Title != None:               
+                
+                add_user_post(Title,img_file,Name,Location,Vehicle,tipsfortravel)  
+                return "Dang bai thanh cong"
+            else:
+                return "Need Title"
+        else:
+            return render_template("post.html")
     else:
         return "Please login!"
 
-    
 
 @app.route("/about")
 def about():
