@@ -63,7 +63,7 @@ def login():
             # id_user = u_list["_id"]
             session["token"] = u
             # a = session["token"]
-            return  "Dang nhap thanh cong"
+            return  render_template("post.html")
         return redirect('/')
 
 
