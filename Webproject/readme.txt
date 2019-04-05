@@ -22,6 +22,11 @@ Date: 2019-03-24
 Nguoi update: Cuong
 Noi dung: 
 -Tool lấy data từ các bài viết tổng hợp
+===================================
+Date: 2019-03-24
+Nguoi update: Cuong
+Noi dung: 
+-Tool lấy data từ các bài viết tổng hợp
 -Tài khoản mongo: lecaocuong198@github.com - mk:lecaocuong198
 -userpassword: travel1
 ===================================
@@ -32,8 +37,9 @@ Noi dung:
 -Tài khoản mongo: lecaocuong198@github.com - mk:lecaocuong198
 -userpassword: travel1
 ===================================
-Date: 2019-03-25
+Date: 2019-04-05
 Nguoi update: Cuong
 Noi dung: 
-- Chuc nang sign-up
+- Chức năng post bài viết
+- Đã sửa lại 1 số chỗ phần post html
 ===================================
