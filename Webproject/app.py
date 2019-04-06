@@ -126,8 +126,7 @@ def about():
 @app.route("/logout")
 def logout():
     del session["token"]
-    return redirect("/login")
-
+    return "ok"
 
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
@@ -135,6 +134,8 @@ def upload_file_page():
 
 @app.route("/Dashboard")
 def Dashboard():
+#if session -> bai viet cua thang nguoi dung ->
+# -> title = username_collection["title"]
     return render_template("Dashboard.html",a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
 
 
