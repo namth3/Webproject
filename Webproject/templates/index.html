@@ -38,7 +38,7 @@
         <ol class="breadcrumb" id="title">
           <li class="breadcrumb-item" ><a href="/">Home</a></li>
           <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/about"></a>About</li>
+          <li class="breadcrumb-item"><a href="/about">About</a></li>
           <li class="breadcrumb-item active" aria-current="page">
             <a href="/login">Login</a>
           </li>
@@ -157,105 +157,75 @@
         
 
       <!-- <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=5&center=14.0583%2C108.2772&key=AIzaSyDbr6vKYgg1HMP4dOgOVFkgN4cnkfHxGR0" allowfullscreen></iframe> -->
+ 
 
-      <div class="row" id="thu">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body" id="div">
-                  <img src={{a2[0]}} class="card-img-top" alt="..." id="height">
-                <h5 class="card-title" id="super">{{a1}}</h5>
-                <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                <a href="/image1" class="btn btn-primary">Show more</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body" id="div">
-                  <img src={{b2[0]}} class="card-img-top" alt="..." style="height: 428px" >
-                <h5 class="card-title" id="super">{{b1}}</h5>
-                <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                <a href="/image2" class="btn btn-primary">Show more</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p></p>
+
+<div class=" d-flex flex-wrap justify-content-around align-items-center ">
+
+  
+        {% for post in post_list_ %}
         
-        <div class="row" id="thu">
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body" id="div">
-                    <img src={{c2[0]}} class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title" id="super">{{c1}}</h5>
-                  <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                  <a href="/image3" class="btn btn-primary">Show more</a>
-                </div>
-              </div>
+          
+          <div class="card w-40">
+            <div class="card-body" id="div">
+                <img src={{post.img_link[0]}} class="card-img-top" alt="..." id="height">
+              <h5 class="card-title" id="super">{{post.Title}}</h5>
+              <p class="card-text">Đây là đoạn giới thiệu ...</p>
+              <a href="/detail/{{loop.index0}}" class="btn btn-primary">Show more</a>
             </div>
-            <div class="col-sm-6">
-              <div class="card">
-                <div class="card-body" id="div">
-                    <img src={{d2[0]}} class="card-img-top" alt="..." id="height"> 
-                  <h5 class="card-title" id="super">{{d1}}</h5>
-                  <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                  <a href="image4" class="btn btn-primary">Show more</a>
-                </div>
+          </div>
+        
+        
+        {% endfor %}
+
+</div>
+
+     
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {# 
+      <div class="row" id="thu">
+      {% for post in post_list_ %}{{loop.index}}
+      
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body" id="div">
+                  <img src={{post.img_link[1]}} class="card-img-top" alt="..." id="height">
+                <h5 class="card-title" id="super">{{post.Title}}</h5>
+                <p class="card-text">Đây là đoạn giới thiệu ...</p>
+                <a href="/post_id" class="btn btn-primary">Show more</a>
               </div>
             </div>
           </div>
-
+          {% endfor %}
+     
+    
+        </div>
+       
+        <p></p>
+    
+        
           <p>
-          </p>
+          </p> -->
+          #}
 
-          <div class="row" id="thu">
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body" id="div">
-                      <img src={{e2[0]}} class="card-img-top" alt="..." id="height">
-                    <h5 class="card-title" id="super">{{e1}}</h5>
-                    <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                    <a href="image5" class="btn btn-primary">Show more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body" id="div">
-                      <img src={{f2[0]}} class="card-img-top" alt="..." id="height">
-                    <h5 class="card-title" id="super">{{f1}}</h5>
-                    <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                    <a href="image6" class="btn btn-primary">Show more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p></p>
-    
-    
-    
-            
-            <div class="row" id="thu">
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body" id="div">
-                        <img src={{g2}} class="card-img-top" alt="..." id="height">
-                      <h5 class="card-title" id="super">{{g1}}</h5>
-                      <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                      <a href="image7" class="btn btn-primary">Show more</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body" id="div">
-                        <img src={{h2}} class="card-img-top" alt="..." id="height">
-                      <h5 class="card-title" id="super">{{h1}} </h5>
-                      <p class="card-text">Đây là đoạn giới thiệu ...</p>
-                      <a href="image8" class="btn btn-primary">Show more</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
 </body>
 </html>
