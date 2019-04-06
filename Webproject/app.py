@@ -15,7 +15,7 @@ def find_username(username):
     user_list = user_collection.find_one({"Username":username})
     return user_list
 
-locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
+locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa", "Tokyo"]
 
 @app.route("/")
 def home_page():
@@ -56,15 +56,15 @@ def login():
         p = form["password"]
         u_list = find_username(u)
         if u_list == None:
-            return "No such user"
+            return render_template("login_error.html")
         elif u_list["Password"] != p:
-            return "Wrong password"
+            return render_template("login_error.html")
         else:
             # id_user = u_list["_id"]
             session["token"] = u
             # a = session["token"]
-            return  render_template("post.html")
-        return redirect('/')
+            return  render_template("index.html")
+        
 
 
 
@@ -88,10 +88,10 @@ def signup():
             #     return "Nhap day du du lieu"
             # else:
             signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass,sign_address)
-            return "Tao Tai Khoan Thanh Cong"
+            return render_template("login.html")
             
         else:
-            return "Nguoi Dung da ton tai"
+            return render_template("signup_error.html")
            
 
 @app.route("/post", methods = ["GET", "POST"])
@@ -118,7 +118,7 @@ def new_post():
     else:
         return "Please login!"
 
-
+    
 @app.route("/about")
 def about():
     return render_template("about.html")
