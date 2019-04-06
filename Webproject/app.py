@@ -122,10 +122,6 @@ def new_post():
     else:
         return "Please login!"
 
-    
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/logout")
 def logout():
