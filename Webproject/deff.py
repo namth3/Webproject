@@ -32,7 +32,7 @@ a=get_by_id(nar[0])
 a1=a["Title"]
 a2=a["img_link"]
 content1=a["content"]
-
+print(a2)
 
 b=get_by_id(nar[1])
 b1=b["Title"]

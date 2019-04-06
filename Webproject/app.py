@@ -20,6 +20,10 @@ locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nộ
 @app.route("/")
 def home_page():
     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+    
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 @app.route("/image1")
 def image1():
@@ -118,10 +122,6 @@ def new_post():
     else:
         return "Please login!"
 
-    
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/logout")
 def logout():
