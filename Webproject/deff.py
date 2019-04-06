@@ -2,15 +2,15 @@ from db import post_collection,user
 from bson import ObjectId
 import random
 listt=post_collection.find().sort([("_id", -1), ("date", -1)])
+listt2=user_post.find().sort([("_id", -1), ("date", -1)])
 
-
-def add(title,link1,link2,link3,link4,link5,link6,content):
-    new={
-        "Title":title,
-        "img_link":[link1,link2,link3,link4,link5,link6],
-        "content":content,
-    }
-    post_collection.insert_one(new)
+# def add(title,link1,link2,link3,link4,link5,link6,content):
+#     new={
+#         "Title":title,
+#         "img_link":[link1,link2,link3,link4,link5,link6],
+#         "content":content,
+#     }
+#     post_collection.insert_one(new)
 # if __name__=="__main__":
 #     add("mot con rua","https://taianhdep.vn/wp-content/uploads/2018/01/tai-hinh-nen-thien-nhien-4k-dep-44.jpg",
 #     "http://nvhb.net/wp-content/uploads/2018/09/Autumn-23.jpg",
