@@ -123,16 +123,11 @@ def new_post():
     else:
         return render_template("login.html")
 
-    
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/logout")
 def logout():
     del session["token"]
-    return redirect("/login")
-
+    return render_template("index.html")
 
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
