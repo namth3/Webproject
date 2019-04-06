@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from db import post_collection,user, user_post
-=======
-from db import post_collection,user,user_post
->>>>>>> 8015341732357121bd0aad11fc3a33cdabe4e768
 from bson import ObjectId
 import random
 listt=post_collection.find().sort([("_id", -1), ("date", -1)])
