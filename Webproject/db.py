@@ -13,10 +13,13 @@ check = client.check
 user_collection = db_user["users"] #collection
 
 #3.Get collection
-post_collection = db["BaiVietTongHop"] #collection
+ #collection
+post_collection = db["BaiVietTongHop"]
 user = db["user"]
 user_post=db["user_post"]
 
+# for i in post_collection.find():
+#     print (i["Title"])
 # listt=post_collection.find()
 # for i in listt:
 #     print (i["Title"])

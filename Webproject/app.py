@@ -19,7 +19,6 @@ locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nộ
 
 @app.route("/")
 def home_page():
-    # locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
 
 @app.route("/image1")
@@ -64,7 +63,7 @@ def login():
             # id_user = u_list["_id"]
             session["token"] = u
             # a = session["token"]
-            return  "Dang nhap thanh cong"
+            return  render_template("post.html")
         return redirect('/')
 
 
@@ -133,6 +132,11 @@ def logout():
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
    return render_template('upload.html')
+
+@app.route("/Dashboard")
+def Dashboard():
+    return render_template("Dashboard.html",a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+
 
 if __name__ == '__main__':
    app.run(debug = True)
