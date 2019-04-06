@@ -81,12 +81,13 @@ def signup():
         sign_email = form["Email"]
         sign_username = form["Username"]
         sign_pass = form["Password"]
+        sign_address = form["Address"]
         u_list = find_username(sign_username)
         if u_list == None:
             # if sign_email == None or sign_username == None or sign_pass == None:
             #     return "Nhap day du du lieu"
             # else:
-            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass)
+            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass,sign_address)
             return "Tao Tai Khoan Thanh Cong"
             
         else:
@@ -100,6 +101,7 @@ def new_post():
         if request.method == "POST":
             form = request.form
             Title = form["Title"]
+            username = session["token"]
             Location = form["Location"]
             Name = form["Content"]
             Vehicle = form["Vehicle"]
@@ -107,7 +109,7 @@ def new_post():
             tipsfortravel = ["tipsfortravel"]
             if Title != None:               
                 
-                add_user_post(Title,img_file,Name,Location,Vehicle,tipsfortravel)  
+                add_user_post(Title,username,img_file,Name,Location,Vehicle,tipsfortravel)
                 return "Dang bai thanh cong"
             else:
                 return "Need Title"
