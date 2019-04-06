@@ -1,4 +1,4 @@
-from db import post_collection,user
+from db import post_collection,user, user_post
 from bson import ObjectId
 import random
 listt=post_collection.find().sort([("_id", -1), ("date", -1)])
