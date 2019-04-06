@@ -18,7 +18,7 @@
   <div class="row">
   		<div class="col-md-3 ">
           <div class="list-group ">
-               <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
+               <a href="/Dashboard" class="list-group-item list-group-item-action">Dashboard</a>
                <a href="#" class="list-group-item list-group-item-action active">Post</a>
                <a href="#" class="list-group-item list-group-item-action">Media</a>  
              </div> 
@@ -26,15 +26,15 @@
   <h4>Add new trip</h4>
  <div class="col col-md-2"></div>
     <div class="col col-md-8">
-  <form>
+  <form method = "POST">
   <div class="form-group required">
     <label for="exampleInputEmail1" class='control-label'>Title</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: A journey to the West">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: A journey to the West" name= "Title">
     <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
   </div>
   <div class="form-group required">
     <label for="exampleInputPassword1" class='control-label'>Location</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Iceland">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex:Iceland" name= "Location">
   </div>
   <div class="form-group required">
     <label for="exampleSelect1" class='control-label'>Category</label>
@@ -47,20 +47,44 @@
 
   <div class="form-group required">
     <label for="exampleTextarea" class='control-label'>Description</label>
-    <textarea class="form-control" id="exampleTextarea" rows="7"></textarea>
+    <textarea class="form-control" id="exampleTextarea" rows="7" name= "Content"></textarea>
   </div>
   <div class="form-group required">
     <label for="exampleInputPassword1" class='control-label'>Vehicle</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Airplane, Car, Train">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex:Airplane, Car, Train" name= "Vehicle">
   </div>
+
+
+
   <div class="form-group">
     <label for="exampleInputFile">Photos</label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    <input type="file" name="image" onchange="onFileSelected(event)">
+    <input style ="display: none" id="base64" name = "base64" type="text" value="">
+   <img id="myimage" height="200">
+   
+   <script type="text/javascript">
+    function onFileSelected(event){
+      var selectedFile = event.target.files[0];
+      var reader = new FileReader();
+      var imgtag = document.getElementById("myimage");
+      var base64 = document.getElementById("base64")
+      imgtag.title = selectedFile.name;
+      reader.onload = function(event){
+        imgtag.src = event.target.result;
+        base64.value = event.target.result;
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  </script>
     <!--<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>-->
   </div>
+
+  
+
+
   <div class="form-group required">
     <label for="exampleTextarea" class='control-label'>Tips for travellers</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="For Example: Contact of hostel where you stayed"></textarea>
+    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="For Example: Contact of hostel where you stayed" name= "tipsfortravel"></textarea>
   </div>
     <ul class="media-date text-uppercase reviews list-inline">
     <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li>

@@ -5,7 +5,7 @@ from db import post_collection
 
 
 
-for i in range(1,20):
+for i in range(1,2):
         n = str(i)
         link = "https://baodulich.com/viet-nam/page/"+n+"/"
         new_list = main_web(link)

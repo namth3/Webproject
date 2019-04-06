@@ -3,6 +3,8 @@ from flask import Flask, flash, request, redirect, url_for, render_template, ses
 from db import *
 from bson import ObjectId
 from connect import signup_db
+import random
+from up_user import add_user_post
 #from db import post_collection,user
 from deff import *
 app = Flask(__name__)
@@ -17,7 +19,6 @@ locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nộ
 
 @app.route("/")
 def home_page():
-    # locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
 
 @app.route("/image1")
@@ -61,8 +62,13 @@ def login():
         else:
             # id_user = u_list["_id"]
             session["token"] = u
-            a = session["token"]
-            return redirect("/")
+            # a = session["token"]
+            return  render_template("post.html")
+        
+
+
+
+
 
 @app.route("/signup",  methods=["GET","POST"])
 def signup():
@@ -75,28 +81,40 @@ def signup():
         sign_email = form["Email"]
         sign_username = form["Username"]
         sign_pass = form["Password"]
+        sign_address = form["Address"]
         u_list = find_username(sign_username)
         if u_list == None:
             # if sign_email == None or sign_username == None or sign_pass == None:
             #     return "Nhap day du du lieu"
             # else:
-            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass)
+            signup_db(sign_name,sign_l_name,sign_email,sign_username,sign_pass,sign_address)
             return "Tao Tai Khoan Thanh Cong"
             
         else:
             return "Nguoi Dung da ton tai"
            
 
-@app.route("/post")
+@app.route("/post", methods = ["GET", "POST"])
 def new_post():
     if "token" in session:
-        if request.method == "GET":
-            return render_template("post.html")
-        elif request.method == "POST":
+        
+        if request.method == "POST":
             form = request.form
-            n = form["place"]
-            p = form["content"]
-        return render_template("post.html")
+            Title = form["Title"]
+            username = session["token"]
+            Location = form["Location"]
+            Name = form["Content"]
+            Vehicle = form["Vehicle"]
+            img_file = request.form['base64']
+            tipsfortravel = ["tipsfortravel"]
+            if Title != None:               
+                
+                add_user_post(Title,username,img_file,Name,Location,Vehicle,tipsfortravel)
+                return "Dang bai thanh cong"
+            else:
+                return "Need Title"
+        else:
+            return render_template("post.html")
     else:
         return "Please login!"
 
@@ -114,6 +132,11 @@ def logout():
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
    return render_template('upload.html')
+
+@app.route("/Dashboard")
+def Dashboard():
+    return render_template("Dashboard.html",a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+
 
 if __name__ == '__main__':
    app.run(debug = True)
