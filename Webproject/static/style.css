@@ -2,15 +2,20 @@
     padding:10px 15px;
 }
 #body{
-    background-image: url("https://png.pngtree.com/element_origin_min_pic/17/01/06/b0afdf3b51e4792d2d050c28818b4a0e.jpg");
+    background-image: url("https://i.ytimg.com/vi/Gsc0HtG6rTc/maxresdefault.jpg");
     background-size: 1463px;
 }
+#post{
+    background-image: url("http://thuthuatphanmem.vn/uploads/2018/05/23/wallpaper-4k-hinh-nen-4k-nhung-chiec-khinh-khi-cau-tren-bau-_40sGb_100012794.jpg");
+    background-size: 1850px;
+}
+
 #title{
     background-color:rgb(92, 104, 105);
 }
 #div{
     background-image: url("https://st2.depositphotos.com/2914847/10916/i/950/depositphotos_109164800-stock-photo-zen-butterfly-sand-background-with.jpg");
-    background-size: 900px;
+    background-size: 880px;
 }
 
 #super{
