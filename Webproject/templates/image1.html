@@ -38,26 +38,26 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active" id="size">
-                <img src={{a2[0]}} class="d-block w-100" alt="...">
+                <img src={{post_detail.img_link[0]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{a2[1]}} class="d-block w-100" alt="...">
+            <img src={{post_detail.img_link[1]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{a2[2]}} class="d-block w-100" alt="...">
+            <img src={{post_detail.img_link[2]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{a2[3]}} class="d-block w-100" alt="...">
+                <img src={{post_detail.img_link[3]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{a2[4]}} class="d-block w-100" alt="...">
+                <img src={{post_detail.img_link[4]}} class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" id="size">
-              <img src={{a2[5]}} class="d-block w-100" alt="...">
+              <img src={{post_detail.img_link[5]}} class="d-block w-100" alt="...">
           </div>
 
         </div>
@@ -72,20 +72,11 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
       </div>
       <div style="background-color:rgb(238, 207, 167);" id="thu">
           <p style="color:rgb(1, 144, 163); font-size:20px; text-indent: 30px;"> 
-              <strong><i>{{content1}}</i></strong>
+              <strong><i>{{post_detail.content}}</i></strong>
           </p>
         </div>
      
 
-
-
-        <form id="thu">
-          <div class="form-group" >
-            <label for="exampleInputEmail1"> <strong> Comment  </strong></label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your comment">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
 </body>
  
   

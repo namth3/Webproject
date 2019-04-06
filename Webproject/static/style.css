@@ -4,7 +4,7 @@
 #body{
     background-image: url("https://i.ytimg.com/vi/Gsc0HtG6rTc/maxresdefault.jpg");
     background-size: 1463px;
-    padding: 5%;
+    padding: 1%;
     background-size: cover;
     background-position: center;
     font-family: helvetica;
@@ -18,13 +18,8 @@
     background-color:rgb(92, 104, 105);
 }
 #div{
-<<<<<<< HEAD
-    background-color:whitesmoke;
-    background-size: 773px;
-=======
     background-image: url("https://st2.depositphotos.com/2914847/10916/i/950/depositphotos_109164800-stock-photo-zen-butterfly-sand-background-with.jpg");
     background-size: 880px;
->>>>>>> 771199790366fa54c4dbd7f74a9af9c4027a2813
 }
 
 #super{
@@ -49,3 +44,22 @@
     height:900px;
 }
 
+
+.section {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    
+
+}
+
+.w-40 {
+    width: 48% !important;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
