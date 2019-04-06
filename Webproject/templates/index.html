@@ -51,12 +51,42 @@
         
 <div id="map"></div>
   <script>
+
+    var intro = " là một điểm du lịch cách trung tâm thành phố Lào Cai khoảng hơn 30 km. Nằm ở độ cao trung bình 1500 – 1800 m so với mặt nước biển, Thị Trấn Sapa luôn chìm trong làn mây bồng bềnh, tạo nên một bức tranh huyền ảo đẹp đến kỳ lạ. Nơi đây, có thứ tài nguyên vô giá đó là khí hậu quanh năm trong lành mát mẻ, với nhiệt độ trung bình 15-18°C."
+    var intro1 = ' is Vietnam\'s capital and second largest city by population (7.7 million in 2015). The city mostly lies on the right bank of the <b>Red River</b>, From 1010 until 1802, it was the most important political centre of Vietnam'
+    var intro2 = " Đà Nẵng nằm giữa ba di sản thế giới: cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Đà Nẵng còn có nhiều danh thắng tuyệt đẹp say lòng du khách như Ngũ Hành Sơn, Bà Nà, bán đảo Sơn Trà, đèo Hải Vân, sông Hàn thơ mộng và cầu quay Sông Hàn – niềm tự hào của thành phố, và biển Mỹ Khê đẹp nhất hành tinh."
+    var intro3 = " Thành phố Hồ Chí Minh (còn có tên khác là Sài Gòn) là thành phố lớn nhất Việt Nam, đồng thời cũng là một trong những trung tâm kinh tế, chính trị, văn hóa và giáo dục quan trọng nhất của Việt Nam. Hiện nay, Thành phố Hồ Chí Minh là thành phố trực thuộc Trung ương được xếp loại đô thị đặc biệt của Việt Nam, cùng với thủ đô Hà Nội."
+    var intro4 = " Thành phố Đà Lạt là tỉnh lỵ của tỉnh Lâm Đồng, nằm trên cao nguyên Lâm Viên,"+
+     " thuộc vùng Tây Nguyên, Việt Nam. Từ xa xưa, vùng đất này vốn là địa bàn cư trú của những cư dân người Lạch, người Chil và người Srê thuộc dân tộc Cơ Ho. Cuối thế kỷ 19, khi tìm kiếm một địa điểm để xây dựng trạm nghỉ dưỡng dành cho người Pháp ở Đông Dương, Toàn quyền Paul Doumer đã quyết định chọn cao nguyên Lâm Viên theo đề nghị của bác sĩ Alexandre Yersin, người từng thám hiểm tới nơi đây vào năm 1893."+
+     " Trong nửa đầu thế kỷ 20, từ một địa điểm hoang vu, những người Pháp đã quy hoạch và xây dựng lên một thành phố xinh đẹp với những biệt thự, công sở, khách sạn và trường học, một trung tâm du lịch và giáo dục của Đông Dương khi đó. Trải qua những khoảng thời gian thăng trầm của hai cuộc chiến tranh cùng giai đoạn khó khăn những thập niên 1970–1980, Đà Lạt ngày nay là một thành phố đông dân, đô thị loại I trực thuộc tỉnh, giữ vai trò trung tâm chính trị, kinh tế và văn hóa của tỉnh Lâm Đồng."
+    var intro5 = " Bắc Giang là một tỉnh trung du thuộc vùng đông bắc Việt Nam. Là tỉnh nằm trong quy hoạch vùng thủ đô Hà Nội. Bắc Giang chiếm phần lớn diện tích của vùng Kinh Bắc xưa và có nền văn hoá phong phú, đặc trưng của Kinh Bắc, là một trong những cái nôi của Dân ca Quan họ với 23 làng quan họ cổ được UNESCO công nhận. Tỉnh lỵ là thành phố Bắc Giang, cách trung tâm thủ đô Hà Nội 50 km."
+    var intro6 = " Phú Thọ được coi là vùng Đất tổ cội nguồn của Việt Nam. Tương truyền tại nơi đây các vua Hùng đã dựng nước nên nhà nước Văn Lang - nhà nước đầu tiên của Việt Nam, với kinh đô là Phong Châu, tức xung quanh thành phố Việt Trì ngày nay."
+    var intro7 = " Thành phố Vinh là đô thị loại 1 thuộc tỉnh Nghệ An, Việt Nam, là trung tâm kinh tế, chính trị của tỉnh và đã được Chính phủ Việt Nam quy hoạch để trở thành trung tâm kinh tế - văn hóa của vùng Bắc Trung Bộ. Vinh là một trong 3 đô thị lớn nhất Bắc Trung Bộ (cùng với thành phố Thanh Hóa, thành phố Huế) và là một trong những đô thị lớn nhất Việt Nam."
+    var intro8 = " Trước đây, Hà Tĩnh cùng với Nghệ An là một miền đất có cùng tên chung là Hoan Châu (trước thời Nhà Lý), Nghệ An châu (thời Lý, Trần), xứ Nghệ (năm 1490, đời vua Lê Thánh Tông), rồi trấn Nghệ An. Năm 1831, vua Minh Mạng chia trấn Nghệ An thành hai tỉnh: Nghệ An (bắc sông Lam) và Hà Tĩnh (nam sông Lam)."
+    var intro9 = " Pleiku (Pờ-lây-cu) là tỉnh lỵ của tỉnh Gia Lai ở vùng Tây Nguyên, Việt Nam. Pleiku là thành phố lớn thứ 3 tại Tây Nguyên (sau Đà Lạt và Buôn Mê Thuột) và là đô thị quan trọng nhất của vùng Bắc Tây Nguyên."
+
+    var img = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Th%C3%A1p_R%C3%B9a_6.jpg" alt = "Hanoi" style="width:128px;height:128px>'
+    var img1 = '<img src="http://www.goodmorningsapa.com/content/images/thumbs/0000435_gs7-3-days-2-nights-2-nights-in-hotel.jpeg" alt = "Sapa" style="width:128px;height:128px>'
+    var img2 = '<img src="https://travel.com.vn/images/destination/Large/dg_160519_du-lich-da-nang.jpg" alt = "Đà Nẵng" style="width:128px;height:128px>'
+    var img3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Khu_trung_t%C3%A2m_th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh%2C_nh%C3%ACn_t%E1%BB%AB_ph%C3%ADa_qu%E1%BA%ADn_2.JPG/1280px-Khu_trung_t%C3%A2m_th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh%2C_nh%C3%ACn_t%E1%BB%AB_ph%C3%ADa_qu%E1%BA%ADn_2.JPG" alt = "TP Hồ Chí Minh" style="width:128px;height:128px>'
+    var img4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Cathedral_of_Da_Lat.jpg/800px-Cathedral_of_Da_Lat.jpg" alt = "Đà Lạt" style="width:128px;height:128px>'
+    var img5 = '<img src="http://www.fiditour.com/upload/images/Blog-du-lich/son-dong-1.jpg" alt = "Hà Giang" style="width:128px;height:128px>'
+    var img6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mausoleum_of_Hung_King.JPG/800px-Mausoleum_of_Hung_King.JPG" alt = "Phú Thọ" style="width:128px;height:128px>'
+    var img7 = '<img src="https://taxiairport.vn/uploads/blog_post/5335_tpvinh.jpg" alt = "Vinh" style="width:128px;height:128px>'
+    var img8 = '<img src="https://phongbanve.vn/public/uploads/news/Hatinh1.jpg" alt = "Hà Tĩnh" style="width:128px;height:128px>'
+    var img9 = '<img src="https://phapluatmoitruong.vn/wp-content/uploads/2017/09/3.gif" alt = "Pleiku" style="width:128px;height:128px>'
+
     var locations = [
-      ['Đà Lạt', 11.939682, 108.441988, 4],
-      ['Thành Phố Hồ Chí Minh', 10.775313, 106.706456, 5],
-      ['Đà Nẵng', 16.063048, 108.229772, 3],
-      ['Hà Nội', 21.029545, 105.851479, 2],
-      ['Thị Trấn Sapa', 22.335549, 103.842246, 1]
+      ['Tp. Pleiku', 105.894467, 108.015103, intro9, img9],
+      ['Tp. Hà Tĩnh', 18.343060, 105.894467, intro8, img8],
+      ['Tp. Vinh', 18.679374, 105.681687, intro7, img7],
+      ['Phú Thọ', 21.367046, 105.320593, intro6, img6],
+      ['Bắc Giang', 21.301452, 106.383727, intro5, img5 ],
+      ['Đà Lạt', 11.939682, 108.441988, intro4, img4 ],
+      ['Thành Phố Hồ Chí Minh', 10.775313, 106.706456, intro3, img3 ],
+      ['Đà Nẵng', 16.063048, 108.229772, intro2, img2 ],
+      ['Hà Nội', 21.029545, 105.851479,intro1, img ],
+      ['Thị Trấn Sapa', 22.335549, 103.842246, intro, img1 ]
     ];  
       // When the user clicks the marker, an info window opens.
       function initMap() {
@@ -71,17 +101,20 @@
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
-      
       }
+      var x = [];
+      {% for lo in locati %}
+        x.push("{{ lo }}");
+      {% endfor %}
       function setMarkers(map) {
         for (i = 0; i < locations.length; i++) {
+          var l = x[i];
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">{{ locati[i] }}</h1>'+'<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Th%C3%A1p_R%C3%B9a_6.jpg" alt = "Hanoi" style="width:128px;height:128px>'+
+            '<h1 id="firstHeading" class="firstHeading">'+'<h1>' + locations[i][0] + '</h1>'+locations[i][4]+
             '<div id="bodyContent">'+
-            '<p><b>{{ locati[i] }}</b>, is Vietnam\'s capital and second largest city by population (7.7 million in 2015). The city mostly lies on the right bank of the <b>Red River</b>,' +
-            'From 1010 until 1802, it was the most important political centre of Vietnam'+
+            '<p><b>' + locations[i][0] + '</b>' + locations[i][3] +
             '<p> <a href="https://www.google.com" target="_blank">'+
             '<input type="button" value="Learn more" />'+'</a>'+ '</p>'+
             '</div>'+
@@ -89,15 +122,21 @@
           marker = new google.maps.Marker({
           position: new google.maps.LatLng(locations[i][1], locations[i][2]),
           map: map,
+          data: {
+            name: contentString
+          }
         });
+
+
           marker.addListener('click', function() {
             if(!this.infoWindow) {
               this.infoWindow = new google.maps.InfoWindow({
-                content: contentString
+                content: this.data.name
               });
             }
             map.setZoom(11);
             this.infoWindow.open(map,this);
+            
           })
         }
         // var marker = new google.maps.Marker({
@@ -113,7 +152,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbr6vKYgg1HMP4dOgOVFkgN4cnkfHxGR0&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1tbIAqN0XqcgTR1-FxYoVTVq6Is6lD98&callback=initMap">
     </script>
         
 
@@ -123,7 +162,7 @@
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body" id="div">
-                  <img src={{a2}} class="card-img-top" alt="..." id="height">
+                  <img src={{a2[0]}} class="card-img-top" alt="..." id="height">
                 <h5 class="card-title" id="super">{{a1}}</h5>
                 <p class="card-text">Đây là đoạn giới thiệu ...</p>
                 <a href="/image1" class="btn btn-primary">Show more</a>
@@ -200,7 +239,7 @@
                 <div class="col-sm-6">
                   <div class="card">
                     <div class="card-body" id="div">
-                        <img src={{g2[0]}} class="card-img-top" alt="..." id="height">
+                        <img src={{g2}} class="card-img-top" alt="..." id="height">
                       <h5 class="card-title" id="super">{{g1}}</h5>
                       <p class="card-text">Đây là đoạn giới thiệu ...</p>
                       <a href="image7" class="btn btn-primary">Show more</a>
@@ -210,7 +249,7 @@
                 <div class="col-sm-6">
                   <div class="card">
                     <div class="card-body" id="div">
-                        <img src={{h2[0]}} class="card-img-top" alt="..." id="height">
+                        <img src={{h2}} class="card-img-top" alt="..." id="height">
                       <h5 class="card-title" id="super">{{h1}} </h5>
                       <p class="card-text">Đây là đoạn giới thiệu ...</p>
                       <a href="image8" class="btn btn-primary">Show more</a>

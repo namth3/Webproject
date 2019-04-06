@@ -59,12 +59,22 @@ f1=f["Title"]
 f2=f["img_link"]
 content6=f["content"]
 
-g=get_by_id(nar[6])
+print(a2[0])
+
+def get_by_id2(id):
+    f=user_post.find_one({'_id': ObjectId(id)})
+    return f
+
+user=[]
+for i in listt2:
+    user.append(i["_id"])
+
+g=get_by_id2(user[0])
 g1=g["Title"]
 g2=g["img_link"]
 content7=g["content"]
 
-h=get_by_id(nar[7])
+h=get_by_id2(user[1])
 h1=h["Title"]
 h2=h["img_link"]
 content8=h["content"]
