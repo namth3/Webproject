@@ -13,14 +13,10 @@ def find_username(username):
     user_list = user_collection.find_one({"Username":username})
     return user_list
 
-locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
+locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa", "Tokyo"]
 
 @app.route("/")
 def home_page():
-<<<<<<< HEAD
-    return render_template("index.html")
-
-=======
     # locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa"]
     return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
 
@@ -48,7 +44,6 @@ def image7():
 @app.route("/image8")
 def image8():
     return render_template("image8.html",h2=h2,content8=content8)
->>>>>>> 1b8b2963f94b3a7342f47c2ccf0f4a82c0e67759
 
 @app.route("/login",  methods=["GET","POST"])
 def login():

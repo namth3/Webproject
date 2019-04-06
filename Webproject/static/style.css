@@ -4,12 +4,16 @@
 #body{
     background-image: url("http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg");
     background-size: 1463px;
+    padding: 5%;
+    background-size: cover;
+    background-position: center;
+    font-family: helvetica;
 }
 #title{
     background-color:rgb(92, 104, 105);
 }
 #div{
-    background-image: url("https://sample-videos.com/img/Sample-jpg-image-500kb.jpg");
+    background-color:whitesmoke;
     background-size: 773px;
 }
 

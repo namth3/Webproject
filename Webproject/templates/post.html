@@ -4,154 +4,46 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="#" crossorigin="anonymous">
-  <title>Document</title>
-</head>
-<body>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" id="title">
-            <li class="breadcrumb-item" ><a href="/">Home</a></li>
-            <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/about"></a>About</li>
-          <li class="breadcrumb-item active" aria-current="page">
-            <a href="/login">Login</a>
-          </li>
-        </ol>
-      </nav>
-
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3 ">
-               <div class="list-group ">
-                    <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-                   
-                    <a href="#" class="list-group-item list-group-item-action">Media</a>
-                    <a href="#" class="list-group-item list-group-item-action">Post</a>
-                  
-                    <a href="#" class="list-group-item list-group-item-action">Settings</a>
-                    
-                    
-                  </div> 
-          </div>
-          <div class="col-md-9">
-              <div class="card">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-3 border-right">
-                              <h4>Add New Post</h4>
-                          </div>
-                          <div class="col-md-7">
-                              <button type="button" class="btn btn-sm btn-primary">Add New</button>
-                          </div>
-                          
-                      </div>
-                      <hr>
-                      <div class="row">
-                          <div class="col-md-8">
-                              <form>
-                                    <div class="form-group row">
-                                      <label for="text" class="col-12 col-form-label">Place</label> 
-                                      <div class="col-12">
-                                        <input id="text" name="place" placeholder="Your place" class="form-control here" required="required" type="text">
-                                      </div>
-                                    </div>
-                                    <div class="form-group row">
-                                      <label for="textarea" class="col-12 col-form-label">Write something about your trip</label> 
-                                      <div class="col-12">
-                                        <textarea id="textarea" name="content" cols="40" rows="5" class="form-control"></textarea>
-                                      </div>
-                                    </div> 
-                                  </form>
-                          </div>
-                          <div class="col-md-4 ">
-                              <div class="card mb-3" style="max-width: 18rem;">
-                                        <div class="card-header bg-light ">Publish</div>
-                                        <div class="card-body">
-                                         
-                                        </div>
-                                        <div class="card-footer bg-light">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm">Preview</button>
-                                            <button type="button" class="btn btn-info btn-sm">Save Draft</button>
-                                            <button type="button" class="btn btn-primary btn-sm">Publish</button>
-                                        </div>
-                                      </div>
-                                  <div class="card mb-3" style="max-width: 18rem;">
-                                        <div class="card-header bg-light ">Tags</div>
-                                        <div class="card-body">
-                                          <form>
-                                            <div class="form-group row">
-                                              <div class="col-9">
-                                                <input id="tags" name="tags" placeholder="seperate with commas" required="required" class="form-control here" type="text">
-                                              </div>
-                                              <div class=" col-2">
-                                                <button name="submit" type="submit" class="btn btn-light">Add</button>
-                                              </div>
-                                              <div class="col-12">
-                                                  <small>Seperate Tags with commas</small>
-                                              </div>
-                                            </div> 
-                                          </form>
-                                          
-      
-                                        </div>
-                                        <div class="card-footer bg-light">
-                                            <a href="#">Choose from the most used tags</a>
-                                        </div>
-                                      </div>
-                                  <div class="card mb-3" style="max-width: 18rem;">
-                                        <div class="card-header bg-light ">Categories</div>
-                                        <div class="card-body">
-                                          <form>
-                                            <div class="form-group row">
-                                              <div class="col-9">
-                                                <input id="tags" name="tags" placeholder=" " required="required" class="form-control here" type="text">
-                                              </div>
-                                              <div class=" col-2">
-                                                <button name="submit" type="submit" class="btn btn-light">Add</button>
-                                              </div>
-                                              
-                                            </div> 
-                                          </form>
-                                          <form>
-                                            <div class="form-group row">
-                                              <label for="select" class="col-12 col-form-label">Select Category</label> 
-                                              <div class="col-8">
-                                                <select id="select" name="select" class="custom-select" required="required">
-                                                  <option value="rabbit">Rabbit</option>
-                                                  <option value="duck">Duck</option>
-                                                  <option value="fish">Fish</option>
-                                                </select>
-                                              </div>
-                                            </div> 
-                                          </form>
-                                        </div>
-                                        <div class="card-footer bg-light">
-                                            <button type="button" class="btn btn-primary btn-sm">Add New Category</button>
-                                        </div>
-                                      </div>
-                                  <div class="card mb-3" style="max-width: 18rem;">
-                                        <div class="card-header bg-light ">Featured Image</div>
-                                        <div class="card-body">
-                                          
-      
-                                        </div>
-                                        <div class="card-footer bg-light">
-                                            <a href="#">Set Featured Image</a>
-                                        </div>
-                                      </div>    
-                          </div>
-                          
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-      </div>
-</body>
-</html>
-
-
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" id="title">
+    <li class="breadcrumb-item" ><a href="/">Home</a></li>
+    <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/about"></a>About</li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <a href="/login">Login</a>
+    </li>
+  </ol>
+</nav>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-3 ">
+          <div class="list-group ">
+               <a href="#" class="list-group-item list-group-item-action">Dashboard</a>
+               <a href="#" class="list-group-item list-group-item-action active">Post</a>
+               <a href="#" class="list-group-item list-group-item-action">Media</a>  
+             </div> 
+     </div>
+  <h4>Add new trip</h4>
+ <div class="col col-md-2"></div>
+    <div class="col col-md-8">
+  <form>
+  <div class="form-group required">
+    <label for="exampleInputEmail1" class='control-label'>Title</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: A journey to the West">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group required">
+    <label for="exampleInputPassword1" class='control-label'>Location</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Iceland">
+  </div>
+  <div class="form-group required">
+    <label for="exampleSelect1" class='control-label'>Category</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>Viet Nam</option>
+      <option>Asia</option>
+      <option>Europe</option>
+    </select>
+  </div>
 
   <div class="form-group required">
     <label for="exampleTextarea" class='control-label'>Description</label>
