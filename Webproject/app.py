@@ -15,11 +15,15 @@ def find_username(username):
     user_list = user_collection.find_one({"Username":username})
     return user_list
 
+def find_user_post(username):
+    user_post_list = user_post.find_all({"Username":username})
+    return user_post_list
+
 locations = ["Đà Lạt","Thành Phố Hồ Chí Minh","Đà Nẵng", "Hà Nội", "Thị Trấn Sapa", "Tokyo"]
 
 @app.route("/")
 def home_page():
-    return render_template("index.html", locati = locations,a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+    return render_template("index.html", list_all=list_all)
 
 @app.route("/image1")
 def image1():
@@ -126,7 +130,7 @@ def about():
 @app.route("/logout")
 def logout():
     del session["token"]
-    return "ok"
+    return render_template("index.html")
 
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
@@ -136,7 +140,14 @@ def upload_file_page():
 def Dashboard():
 #if session -> bai viet cua thang nguoi dung ->
 # -> title = username_collection["title"]
-    return render_template("Dashboard.html",a1=a1,b1=b1,c1=c1,d1=d1,e1=e1,f1=f1,g1=g1,h1=h1,a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,f2=f2,g2=g2,h2=h2)
+    if "token" in session:
+        username = session["token"]
+        list_user_p=find_user_post(username)
+        len_list = len(list_user_p)
+
+        return render_template("Dashboard.html",list_user_p=list_user_p,len_list=len_list)
+    else:
+        return "Need login first"
 
 
 if __name__ == '__main__':
