@@ -17,18 +17,23 @@ def find_username(username):
 
 def find_user_post(username):
     user_post_list = user_post.find({"Username":username})
-    return user_post_list
+    post_list_user = []
+    for post in user_post_list:
+        post_list_user.append(post)
+    return post_list_user
+
 
 @app.route("/")
 def home_page():
     post_list_ = post_list
-    print(post_list_)
+    # print(post_list_)
     return render_template("index.html", post_list_ = post_list_)
 
 @app.route("/detail/<int:index>")
 def image1(index):
     post_detail = post_list[index]
     return render_template("image1.html",post_detail = post_detail)
+
 # @app.route("/image2")
 # def image2():
 #     return render_template("image2.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content2=content2)
@@ -137,13 +142,17 @@ def upload_file_page():
 def Dashboard():
     if "token" in session:
         username = session["token"]
-        list_user_p=find_user_post(username)
+        list_user_p = find_user_post(username)
         # len_list = len(list_user_p)
-
         return render_template("Dashboard.html",list_user_p=list_user_p)
     else:
         return "Need login first"
-
+@app.route("/dashboard/<int:index>")
+def dashboard_indx(index):
+    username = session["token"]
+    list_user_p = find_user_post(username)
+    dashboard_detail = list_user_p[index]
+    return render_template("image1.html",post_detail = dashboard_detail)
 
 
 
