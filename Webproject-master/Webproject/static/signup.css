@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+body
+{
+    font-family: 'Numans', sans-serif;
+}
+.form-signin {
+    max-width: 280px;
+    padding: 15px;
+    margin:100px;
+    margin-top:10px;
+  }
+
+.input-group-addon
+{
+    background-color:  #FFC312;
+    border-color: rgb(40, 94, 142);
+    color: rgb(255, 255, 255);
+}
+.form-control:focus
+{
+    background-color: #FFC312;
+    border-color: rgb(40, 94, 142);
+    color: rgb(255, 255, 255);
+}
+.panel-default {
+opacity: 0.8;
+/*margin-top:30px;*/
+}
+.form-signup input[type="text"],.form-signup input[type="password"] { border: 1px solid  #FFC312; }
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+  }

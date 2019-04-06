@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="../static/style.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <title>Document</title>
+</head>
+<body id="post">
+  
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" id="title">
+    <li class="breadcrumb-item" ><a href="/">Home</a></li>
+    <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/about"></a>About</li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <a href="/login">Login</a>
+    </li>
+  </ol>
+</nav>
+<div class="container">
+  <div class="row">
+  		<div class="col-md-3 ">
+          <div class="list-group ">
+               <a href="/Dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+               <a href="#" class="list-group-item list-group-item-action active">Post</a>
+               <a href="#" class="list-group-item list-group-item-action">Media</a>  
+             </div> 
+     </div>
+  <h4 >    Add new trip</h4>
+ <div class="col col-md-2"></div>
+    <div class="col col-md-8">
+  <form method = "POST">
+  <div class="form-group required">
+    <label for="exampleInputEmail1" class='control-label'>Title</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: A journey to the West" name= "Title">
+    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+  </div>
+  <div class="form-group required">
+    <label for="exampleInputPassword1" class='control-label'>Location</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex:Iceland" name= "Location">
+  </div>
+  <div class="form-group required">
+    <label for="exampleSelect1" class='control-label'>Category</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>Viet Nam</option>
+      <option>Asia</option>
+      <option>Europe</option>
+    </select>
+  </div>
+
+  <div class="form-group required">
+    <label for="exampleTextarea" class='control-label'>Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="7" name= "Content"></textarea>
+  </div>
+  <div class="form-group required">
+    <label for="exampleInputPassword1" class='control-label'>Vehicle</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ex:Airplane, Car, Train" name= "Vehicle">
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="exampleInputFile">Photos</label>
+    <input type="file" name="image" onchange="onFileSelected(event)">
+    <input style ="display: none" id="base64" name = "base64" type="text" value="">
+   <img id="myimage" height="200">
+   
+   <script type="text/javascript">
+    function onFileSelected(event){
+      var selectedFile = event.target.files[0];
+      var reader = new FileReader();
+      var imgtag = document.getElementById("myimage");
+      var base64 = document.getElementById("base64")
+      imgtag.title = selectedFile.name;
+      reader.onload = function(event){
+        imgtag.src = event.target.result;
+        base64.value = event.target.result;
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  </script>
+    <!--<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>-->
+  </div>
+
+ 
+
+  <div class="form-group required">
+    <label for="exampleTextarea" class='control-label'>Tips for travellers</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="For Example: Contact of hostel where you stayed" name= "tipsfortravel"></textarea>
+  </div>
+    <ul class="media-date text-uppercase reviews list-inline">
+    <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li>
+    <li class="aaaa"><button type="submit" class="btn btn-success">Publish</button></li>
+  </ul>
+</form>
+</div>
+  <div class="col col-md-2"></div>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
