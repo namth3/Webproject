@@ -23,7 +23,7 @@ listt=user_post.find().sort([("_id", -1), ("date", -1)])
 nar=[]
 for i in listt:
     nar.append(i["_id"])
-    print(i)
+    
 def get_by_id(id):
     f=post_collection.find_one({'_id': ObjectId(id)})
     return f

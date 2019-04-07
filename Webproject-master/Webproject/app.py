@@ -129,7 +129,7 @@ def new_post():
             if Title != None:               
                 
                 add_user_post(Title,username,img_list,Name,Location,Vehicle,tipsfortravel)
-                return "Dang bai thanh cong"
+                return render_template("Dashboard.html")
             else:
                 return "Need Title"
         else:
