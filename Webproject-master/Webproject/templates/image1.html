@@ -22,7 +22,11 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
        <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="/about">About</a></li>
       <li class="breadcrumb-item active" aria-current="page">
-        <a href="/login">Login</a>
+        {% if session['logged_in'] == True %}
+          <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+        {% else %}
+          <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+        {% endif %}
       </li>
     </ol>
   </nav>
