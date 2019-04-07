@@ -40,14 +40,14 @@
           <li class="breadcrumb-item" ><a href="/post">Post</a></li>
           <li class="breadcrumb-item"><a href="/about">About</a></li>
           <li class="breadcrumb-item active" aria-current="page">
-            <a href="/login">Login</a>
+          {% if session['logged_in'] == True %}
+            <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+          {% else %}
+            <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+          {% endif %}
           </li>
         </ol>
       </nav>
-
-
-
-        <h2 style="padding: 15px;">Google Map here</h2>
         
 <div id="map"></div>
   <script>
@@ -64,6 +64,7 @@
     var intro7 = " Thành phố Vinh là đô thị loại 1 thuộc tỉnh Nghệ An, Việt Nam, là trung tâm kinh tế, chính trị của tỉnh và đã được Chính phủ Việt Nam quy hoạch để trở thành trung tâm kinh tế - văn hóa của vùng Bắc Trung Bộ. Vinh là một trong 3 đô thị lớn nhất Bắc Trung Bộ (cùng với thành phố Thanh Hóa, thành phố Huế) và là một trong những đô thị lớn nhất Việt Nam."
     var intro8 = " Trước đây, Hà Tĩnh cùng với Nghệ An là một miền đất có cùng tên chung là Hoan Châu (trước thời Nhà Lý), Nghệ An châu (thời Lý, Trần), xứ Nghệ (năm 1490, đời vua Lê Thánh Tông), rồi trấn Nghệ An. Năm 1831, vua Minh Mạng chia trấn Nghệ An thành hai tỉnh: Nghệ An (bắc sông Lam) và Hà Tĩnh (nam sông Lam)."
     var intro9 = " Pleiku (Pờ-lây-cu) là tỉnh lỵ của tỉnh Gia Lai ở vùng Tây Nguyên, Việt Nam. Pleiku là thành phố lớn thứ 3 tại Tây Nguyên (sau Đà Lạt và Buôn Mê Thuột) và là đô thị quan trọng nhất của vùng Bắc Tây Nguyên."
+    var intro10 = " Đây là lần đầu tiên mình đi Phú Quốc, mọi thứ đều tự túc nên chủ yếu là nhờ sự trợ giúp của các bạn ở Phú Quốc và review từ các group Phú Quốc để biết đến những địa điểm ăn chơi ở đây Mình book được voucher giá rẻ nên vé máy bay của hai người +3 ngày 2 đêm ở Sol Beach House chỉ tầm 6,400k cho hai người..."
 
     var img = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Th%C3%A1p_R%C3%B9a_6.jpg" alt = "Hanoi" style="width:128px;height:128px>'
     var img1 = '<img src="http://www.goodmorningsapa.com/content/images/thumbs/0000435_gs7-3-days-2-nights-2-nights-in-hotel.jpeg" alt = "Sapa" style="width:128px;height:128px>'
@@ -75,26 +76,28 @@
     var img7 = '<img src="https://taxiairport.vn/uploads/blog_post/5335_tpvinh.jpg" alt = "Vinh" style="width:128px;height:128px>'
     var img8 = '<img src="https://phongbanve.vn/public/uploads/news/Hatinh1.jpg" alt = "Hà Tĩnh" style="width:128px;height:128px>'
     var img9 = '<img src="https://phapluatmoitruong.vn/wp-content/uploads/2017/09/3.gif" alt = "Pleiku" style="width:128px;height:128px>'
+    var img10 = '<img src="https://travel.com.vn/images/destination/Large/dc_150917_phu-quoc_1414825278.jpg" alt = "Phú Quốc" style="width:128px;height:128px>'
 
     var locations = [
-      ['Tp. Pleiku', 105.894467, 108.015103, intro9, img9],
-      ['Tp. Hà Tĩnh', 18.343060, 105.894467, intro8, img8],
-      ['Tp. Vinh', 18.679374, 105.681687, intro7, img7],
-      ['Phú Thọ', 21.367046, 105.320593, intro6, img6],
-      ['Bắc Giang', 21.301452, 106.383727, intro5, img5 ],
-      ['Đà Lạt', 11.939682, 108.441988, intro4, img4 ],
-      ['Thành Phố Hồ Chí Minh', 10.775313, 106.706456, intro3, img3 ],
-      ['Đà Nẵng', 16.063048, 108.229772, intro2, img2 ],
-      ['Hà Nội', 21.029545, 105.851479,intro1, img ],
-      ['Thị Trấn Sapa', 22.335549, 103.842246, intro, img1 ]
+      ['Đảo Phú Quốc', 10.290791, 103.983171, intro10, img10, 0],
+      ['Tp. Pleiku', 105.894467, 108.015103, intro9, img9, 0],
+      ['Tp. Hà Tĩnh', 18.343060, 105.894467, intro8, img8, 0],
+      ['Tp. Vinh', 18.679374, 105.681687, intro7, img7, 0],
+      ['Phú Thọ', 21.367046, 105.320593, intro6, img6, 0],
+      ['Bắc Giang', 21.301452, 106.383727, intro5, img5, 0 ],
+      ['Đà Lạt', 11.939682, 108.441988, intro4, img4, 0],
+      ['Thành Phố Hồ Chí Minh', 10.775313, 106.706456, intro3, img3, 0],
+      ['Đà Nẵng', 16.063048, 108.229772, intro2, img2, 0],
+      ['Hà Nội', 21.029545, 105.851479,intro1, img, 0],
+      ['Thị Trấn Sapa', 22.335549, 103.842246, intro, img1, 3],
     ];  
       // When the user clicks the marker, an info window opens.
       function initMap() {
         var hanoi = {lat: 21.029545, lng: 105.851479};
         var danang = {lat: 16.063048, lng: 108.229772};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 7,
-          center: hanoi
+          zoom: 6,
+          center: danang
         });
         setMarkers(map);
         
@@ -115,7 +118,7 @@
             '<h1 id="firstHeading" class="firstHeading">'+'<h1>' + locations[i][0] + '</h1>'+locations[i][4]+
             '<div id="bodyContent">'+
             '<p><b>' + locations[i][0] + '</b>' + locations[i][3] +
-            '<p> <a href="/Dashboard" target="_blank">'+
+            '<p> <a href="/detail/'+locations[i][5]+'" target="_blank">'+
             '<input type="button" value="Learn more" />'+'</a>'+ '</p>'+
             '</div>'+
             '</div>';  
@@ -168,7 +171,7 @@
           
           <div class="card w-40">
             <div class="card-body" id="div">
-                <img src={{post.img_link[0]}} class="card-img-top" alt="..." id="height">
+                <img src={{post.img_link}} class="card-img-top" alt="..." id="height">
               <h5 class="card-title" id="super">{{post.Title}}</h5>
               
               <a href="/detail/{{loop.index0}}" class="btn btn-primary">Show more</a>

@@ -22,7 +22,11 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
        <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="/about"></a>About</li>
       <li class="breadcrumb-item active" aria-current="page">
-        <a href="/login">Login</a>
+      {% if session['logged_in'] == True %}
+        <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+      {% else %}
+        <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+      {% endif %}
       </li>
     </ol>
   </nav>
@@ -39,26 +43,26 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active" id="size">
-                <img src={{d2[0]}} class="d-block w-100" alt="...">
+                <img src={{e2[0]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{d2[1]}} class="d-block w-100" alt="...">
+            <img src={{e2[1]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{d2[2]}} class="d-block w-100" alt="...">
+            <img src={{e2[2]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{d2[3]}} class="d-block w-100" alt="...">
+                <img src={{e2[3]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{d2[4]}} class="d-block w-100" alt="...">
+                <img src={{e2[4]}} class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" id="size">
-              <img src={{d2[5]}} class="d-block w-100" alt="...">
+              <img src={{e2[5]}} class="d-block w-100" alt="...">
           </div>
 
         </div>
@@ -73,10 +77,9 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
       </div>
       <div style="background-color:rgb(238, 207, 167);"id="thu">
             <p style="color:rgb(1, 144, 163); font-size:20px; text-indent: 30px;"> 
-                <strong><i>{{content4}}</i></strong>
+                <strong><i>{{content5}}</i></strong>
             </p>
           </div>
-
 
 
 

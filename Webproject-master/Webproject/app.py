@@ -17,17 +17,26 @@ def find_username(username):
 
 def find_user_post(username):
     user_post_list = user_post.find({"Username":username})
-    return user_post_list
+    post_list_user = []
+    for post in user_post_list:
+        post_list_user.append(post)
+    return post_list_user
+
 
 @app.route("/")
 def home_page():
     post_list_ = post_list
     return render_template("index.html", post_list_ = post_list_)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+    
 @app.route("/detail/<int:index>")
 def image1(index):
     post_detail = post_list[index]
     return render_template("image1.html",post_detail = post_detail)
+
 # @app.route("/image2")
 # def image2():
 #     return render_template("image2.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content2=content2)
@@ -66,11 +75,15 @@ def login():
         else:
             # id_user = u_list["_id"]
             session["token"] = u
+            session['logged_in'] = True
             # a = session["token"]
             return  render_template("index.html")
         
 
-
+@app.route("/logout")
+def logout():
+    session.pop('logged_in', None)
+    return render_template("index.html")
 
 
 
@@ -109,11 +122,13 @@ def new_post():
             Location = form["Location"]
             Name = form["Content"]
             Vehicle = form["Vehicle"]
+            img_list = []
             img_file = request.form['base64']
+            img_list.append(img_file)
             tipsfortravel = ["tipsfortravel"]
             if Title != None:               
                 
-                add_user_post(Title,username,img_file,Name,Location,Vehicle,tipsfortravel)
+                add_user_post(Title,username,img_list,Name,Location,Vehicle,tipsfortravel)
                 return "Dang bai thanh cong"
             else:
                 return "Need Title"
@@ -123,10 +138,7 @@ def new_post():
         return render_template("login.html")
 
 
-@app.route("/logout")
-def logout():
-    del session["token"]
-    return render_template("index.html")
+
 
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
@@ -136,13 +148,17 @@ def upload_file_page():
 def Dashboard():
     if "token" in session:
         username = session["token"]
-        list_user_p=find_user_post(username)
+        list_user_p = find_user_post(username)
         # len_list = len(list_user_p)
-
         return render_template("Dashboard.html",list_user_p=list_user_p)
     else:
         return "Need login first"
-
+@app.route("/dashboard/<int:index>")
+def dashboard_indx(index):
+    username = session["token"]
+    list_user_p = find_user_post(username)
+    dashboard_detail = list_user_p[index]
+    return render_template("image3.html",post_detail = dashboard_detail)
 
 
 

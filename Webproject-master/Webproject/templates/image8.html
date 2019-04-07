@@ -22,7 +22,11 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
        <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
       <li class="breadcrumb-item"><a href="/about"></a>About</li>
       <li class="breadcrumb-item active" aria-current="page">
-        <a href="/login">Login</a>
+      {% if session['logged_in'] == True %}
+        <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+      {% else %}
+        <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+      {% endif %}
       </li>
     </ol>
   </nav>
@@ -35,29 +39,30 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active" id="size">
-                <img src={{post_detail.img_link[0]}} class="d-block w-100" alt="...">
+                <img src={{h2}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{post_detail.img_link[1]}} class="d-block w-100" alt="...">
+            <img src={{h2[1]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-            <img src={{post_detail.img_link[2]}} class="d-block w-100" alt="...">
+            <img src={{h2[2]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{post_detail.img_link[3]}} class="d-block w-100" alt="...">
+                <img src={{h2[3]}} class="d-block w-100" alt="...">
           </div>
 
           <div class="carousel-item" id="size">
-                <img src={{post_detail.img_link[4]}} class="d-block w-100" alt="...">
+                <img src={{h2[4]}} class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" id="size">
-              <img src={{post_detail.img_link[5]}} class="d-block w-100" alt="...">
+              <img src={{h2[5]}} class="d-block w-100" alt="...">
           </div>
 
         </div>
@@ -70,14 +75,23 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div style="background-color:rgb(238, 207, 167);" id="thu">
-          <p style="color:rgb(1, 144, 163); font-size:20px; text-indent: 30px;"> 
-              <strong><i>{{post_detail.content}}</i></strong>
-          </p>
-        </div>
-     
+      <div style="background-color:rgb(238, 207, 167);"id="thu">
+            <p style="color:rgb(1, 144, 163); font-size:20px; text-indent: 30px;"> 
+                <strong><i>{{content8}}</i></strong>
+            </p>
+          </div>
 
+
+
+
+          
+        <form id="thu">
+          <div class="form-group" >
+            <label for="exampleInputEmail1"> <strong> Comment  </strong></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your comment">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 </body>
- 
-  
+
 </html>
