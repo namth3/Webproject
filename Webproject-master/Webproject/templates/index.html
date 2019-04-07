@@ -12,7 +12,7 @@
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
     #map {
-      height: 700px;
+      height: 650px;
       margin: 1.1%;
     }
     /* Optional: Makes the sample page fill the window. */
@@ -65,6 +65,7 @@
     var intro8 = " Trước đây, Hà Tĩnh cùng với Nghệ An là một miền đất có cùng tên chung là Hoan Châu (trước thời Nhà Lý), Nghệ An châu (thời Lý, Trần), xứ Nghệ (năm 1490, đời vua Lê Thánh Tông), rồi trấn Nghệ An. Năm 1831, vua Minh Mạng chia trấn Nghệ An thành hai tỉnh: Nghệ An (bắc sông Lam) và Hà Tĩnh (nam sông Lam)."
     var intro9 = " Pleiku (Pờ-lây-cu) là tỉnh lỵ của tỉnh Gia Lai ở vùng Tây Nguyên, Việt Nam. Pleiku là thành phố lớn thứ 3 tại Tây Nguyên (sau Đà Lạt và Buôn Mê Thuột) và là đô thị quan trọng nhất của vùng Bắc Tây Nguyên."
     var intro10 = " Đây là lần đầu tiên mình đi Phú Quốc, mọi thứ đều tự túc nên chủ yếu là nhờ sự trợ giúp của các bạn ở Phú Quốc và review từ các group Phú Quốc để biết đến những địa điểm ăn chơi ở đây Mình book được voucher giá rẻ nên vé máy bay của hai người +3 ngày 2 đêm ở Sol Beach House chỉ tầm 6,400k cho hai người..."
+    var intro11 = " Bài viết này giúp bạn sắp xếp thời gian hợp lý, thưởng thức nhiều món ngon, dạo chơi đủ nơi ở phố cổ Hội An trong 24h. 8h ăn sáng bánh mỳ phố cổ Ổ bánh mì tầm 20.000 đồng, nhân thịt xíu, chả bò, dưa leo và rau thơm là một trong những món ăn sáng quen thuộc của người Hội An. Bánh mì đặc ruột, dài và ốm hơn so với bánh mì Sài Gòn, phải nướng giòn lên ăn mới ngon, dậy lên mùi bột mì thơm nức mũi..."
 
     var img = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Th%C3%A1p_R%C3%B9a_6.jpg" alt = "Hanoi" style="width:128px;height:128px>'
     var img1 = '<img src="http://www.goodmorningsapa.com/content/images/thumbs/0000435_gs7-3-days-2-nights-2-nights-in-hotel.jpeg" alt = "Sapa" style="width:128px;height:128px>'
@@ -77,8 +78,10 @@
     var img8 = '<img src="https://phongbanve.vn/public/uploads/news/Hatinh1.jpg" alt = "Hà Tĩnh" style="width:128px;height:128px>'
     var img9 = '<img src="https://phapluatmoitruong.vn/wp-content/uploads/2017/09/3.gif" alt = "Pleiku" style="width:128px;height:128px>'
     var img10 = '<img src="https://travel.com.vn/images/destination/Large/dc_150917_phu-quoc_1414825278.jpg" alt = "Phú Quốc" style="width:128px;height:128px>'
+    var img11 = '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/PhoCoHoiAn.jpg" alt = "Phú Quốc" style="width:128px;height:128px>'
 
     var locations = [
+      ['Hội An', 15.878228, 108.328217, intro11, img11, 6],
       ['Đảo Phú Quốc', 10.290791, 103.983171, intro10, img10, 0],
       ['Tp. Pleiku', 105.894467, 108.015103, intro9, img9, 0],
       ['Tp. Hà Tĩnh', 18.343060, 105.894467, intro8, img8, 0],
@@ -137,21 +140,10 @@
                 content: this.data.name
               });
             }
-            map.setZoom(11);
+            map.setZoom(10);
             this.infoWindow.open(map,this);
-            
           })
         }
-        // var marker = new google.maps.Marker({
-        //   position: hanoi,
-        //   map: map,
-        //   title: 'Hà Nội'
-        // });
-        // marker.addListener('click', function() {
-        //   infowindow.open(map, marker);
-        // map.setZoom(10);
-        // map.setCenter(marker.getPosition());
-        // });
       }
     </script>
     <script async defer
