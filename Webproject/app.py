@@ -67,11 +67,15 @@ def login():
         else:
             # id_user = u_list["_id"]
             session["token"] = u
+            session['logged_in'] = True
             # a = session["token"]
             return  render_template("index.html")
         
 
-
+@app.route("/logout")
+def logout():
+    session.pop('logged_in', None)
+    return render_template("index.html")
 
 
 
@@ -124,10 +128,7 @@ def new_post():
         return render_template("login.html")
 
 
-@app.route("/logout")
-def logout():
-    del session["token"]
-    return render_template("index.html")
+
 
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file_page():
