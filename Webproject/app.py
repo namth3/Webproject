@@ -22,7 +22,6 @@ def find_user_post(username):
 @app.route("/")
 def home_page():
     post_list_ = post_list
-    print(post_list_)
     return render_template("index.html", post_list_ = post_list_)
 
 @app.route("/detail/<int:index>")

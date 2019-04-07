@@ -37,7 +37,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="title">
           <li class="breadcrumb-item" ><a href="/">Home</a></li>
-          <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+          <li class="breadcrumb-item" ><a href="/post">Post</a></li>
           <li class="breadcrumb-item"><a href="/about">About</a></li>
           <li class="breadcrumb-item active" aria-current="page">
             <a href="/login">Login</a>
@@ -170,7 +170,7 @@
             <div class="card-body" id="div">
                 <img src={{post.img_link[0]}} class="card-img-top" alt="..." id="height">
               <h5 class="card-title" id="super">{{post.Title}}</h5>
-              <p class="card-text">Đây là đoạn giới thiệu ...</p>
+              
               <a href="/detail/{{loop.index0}}" class="btn btn-primary">Show more</a>
             </div>
           </div>

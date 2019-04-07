@@ -4,6 +4,11 @@ import random
 homepage_post_list=post_collection.find().sort([("_id", -1), ("date", -1)])
 user_post_list=user_post.find().sort([("_id", -1), ("date", -1)])
 
+post_list = []
+for i in homepage_post_list:
+    post_list.append(i)
+
+
 # def add(title,link1,link2,link3,link4,link5,link6,content):
 #     new={
 #         "Title":title,
@@ -31,9 +36,6 @@ user_post_list=user_post.find().sort([("_id", -1), ("date", -1)])
 #     post_list = post_collection.find({})
 #     return post_list
 
-post_list = []
-for i in homepage_post_list:
-    post_list.append(i)
 
 
 # lenn=len(posttt)-1
@@ -48,51 +50,6 @@ for i in homepage_post_list:
 
     
 # print(post_list[0][0]["Title"])
-
-# b=get_by_id(nar[1])
-# b1=b["Title"]
-# b2=b["img_link"]
-# content2=b["content"]
-
-# c=get_by_id(nar[2])
-# c1=c["Title"]
-# c2=c["img_link"]
-# content3=c["content"]
-
-# d=get_by_id(nar[3])
-# d1=d["Title"]
-# d2=d["img_link"]
-# content4=d["content"]
-
-# e=get_by_id(nar[4])
-# e1=e["Title"]
-# e2=e["img_link"]
-# content5=e["content"]
-
-# f=get_by_id(nar[5])
-# f1=f["Title"]
-# f2=f["img_link"]
-# content6=f["content"]
-
-# print(a2[0])
-
-# def get_by_id2(id):
-#     f=user_post.find_one({'_id': ObjectId(id)})
-#     return f
-
-# user=[]
-# for i in listt2:
-#     user.append(i["_id"])
-
-# g=get_by_id2(user[0])
-# g1=g["Title"]
-# g2=g["img_link"]
-# content7=g["content"]
-
-# h=get_by_id2(user[1])
-# h1=h["Title"]
-# h2=h["img_link"]
-# content8=h["content"]
 
 
 
