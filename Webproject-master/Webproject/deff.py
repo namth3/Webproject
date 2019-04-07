@@ -2,7 +2,6 @@ from db import post_collection,user, user_post
 from bson import ObjectId
 import random
 homepage_post_list=post_collection.find().sort([("_id", -1), ("date", -1)])
-user_post_list=user_post.find().sort([("_id", -1), ("date", -1)])
 
 # def add(title,link1,link2,link3,link4,link5,link6,content):
 #     new={
@@ -34,6 +33,11 @@ user_post_list=user_post.find().sort([("_id", -1), ("date", -1)])
 post_list = []
 for i in homepage_post_list:
     post_list.append(i)
+
+# use = []
+# for i in user_post_list:
+#     use.append(i)
+# print(use)
 
 
 # lenn=len(posttt)-1

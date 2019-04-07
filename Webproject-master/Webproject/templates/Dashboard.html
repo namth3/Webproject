@@ -26,8 +26,8 @@
 
   <div class="col-md-3 ">
     <div class="list-group ">
-         <a href="/Dashboard" class="list-group-item list-group-item-action">Dashboard</a>
-         <a href="#" class="list-group-item list-group-item-action active">Post</a>
+         <a href="/Dashboard" class="list-group-item list-group-item-action active">Dashboard</a>
+         <a href="#" class="list-group-item list-group-item-action">Post</a>
        </div>
 </div>
 
@@ -38,7 +38,7 @@
                 <img src={{post.img_link}} class="card-img-top" alt="..." id="height">
               <h5 class="card-title" id="super">{{post.Title}}</h5>
               <p class="card-text">Đây là đoạn giới thiệu ...</p>
-              <a href="/detail/{{loop.index0}}" class="btn btn-primary">Show more</a>
+              <a href="/dashboard/{{loop.index0}}" class="btn btn-primary">Show more</a>
             </div>
           </div>
         
