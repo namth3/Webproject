@@ -6,7 +6,7 @@ from connect import signup_db
 import random
 from up_user import add_user_post
 #from db import post_collection,user
-from deff import *
+# from deff import *
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "@thanhinh1707abcdefghiklmn"
@@ -38,6 +38,10 @@ def about():
     
 @app.route("/detail/<int:index>")
 def image1(index):
+    user_post_li=user_post.find().sort([("_id", -1), ("date", -1)])
+    post_list = []
+    for i in user_post_li:
+        post_list.append(i)
     post_detail = post_list[index]
     return render_template("image1.html",post_detail = post_detail)
 
