@@ -120,6 +120,7 @@ def new_post():
             return render_template("post.html")
     else:
         return render_template("login.html")
+        
 
 
 
@@ -143,7 +144,6 @@ def dashboard_indx(index):
     list_user_p = find_user_post(username)
     dashboard_detail = list_user_p[index]
     return render_template("image3.html",post_detail = dashboard_detail)
-
 
 
 if __name__ == '__main__':

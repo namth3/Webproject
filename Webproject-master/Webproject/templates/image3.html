@@ -19,14 +19,10 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb" id="title">
       <li class="breadcrumb-item" ><a href="/">Home</a></li>
-       <li class="breadcrumb-item" ><a href="/post">Post</a></li>
-      <li class="breadcrumb-item"><a href="/about">About</a></li>
+       <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/about"></a>About</li>
       <li class="breadcrumb-item active" aria-current="page">
-        {% if session['logged_in'] == True %}
-          <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
-        {% else %}
-          <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
-        {% endif %}
+        <a href="/login">Login</a>
       </li>
     </ol>
   </nav>
@@ -34,13 +30,37 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
         <ol class="carousel-indicators">
-          <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> -->
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active" id="size">
-                <img src={{post_detail.img_link[0]}} class="d-block w-100" alt="...">
+                <img src={{c2[0]}} class="d-block w-100" alt="...">
           </div>
-        
+
+          <div class="carousel-item" id="size">
+            <img src={{c2[1]}} class="d-block w-100" alt="...">
+          </div>
+
+          <div class="carousel-item" id="size">
+            <img src={{c2[2]}} class="d-block w-100" alt="...">
+          </div>
+
+          <div class="carousel-item" id="size">
+                <img src={{c2[3]}} class="d-block w-100" alt="...">
+          </div>
+
+          <div class="carousel-item" id="size">
+                <img src={{c2[4]}} class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" id="size">
+              <img src={{c2[5]}} class="d-block w-100" alt="...">
+          </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -51,14 +71,22 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div style="background-color:rgb(238, 207, 167);" id="thu">
-          <p style=" font-size:20px; text-indent: 30px;"> 
-              <strong>{{post_detail.content}}</strong>
-          </p>
-        </div>
-     
+      <div style="background-color:rgb(238, 207, 167);"id="thu">
+            <p style="color:rgb(1, 144, 163); font-size:20px; text-indent: 30px;"> 
+                <strong><i>{{content3}}</i></strong>
+            </p>
+          </div>
 
+
+
+          
+        <form id="thu">
+          <div class="form-group" >
+            <label for="exampleInputEmail1"> <strong> Comment  </strong></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="your comment">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 </body>
- 
-  
+
 </html>
