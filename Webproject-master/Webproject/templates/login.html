@@ -21,10 +21,14 @@
 		<nav aria-label="breadcrumb">
 				<ol class="breadcrumb" id="title">
 						<li class="breadcrumb-item" ><a href="/">Home</a></li>
-					<li class="breadcrumb-item" ><a href="/post" font-family: 'Numans', sans-serif>Post</a></li>
-				  <li class="breadcrumb-item"><a href="/about" font-family: 'Numans', sans-serif></a>About</li>
+					<li class="breadcrumb-item"><a href="/post" font-family: 'Numans', sans-serif>Post</a></li>
+				  <li class="breadcrumb-item"><a href="/about" font-family: 'Numans', sans-serif>About</a></li>
 				  <li class="breadcrumb-item active" aria-current="page">
-					<a href="/login" font-family: 'Numans', sans-serif>Login</a>
+					{% if session['logged_in'] == True %}
+						<li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+					{% else %}
+						<li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+					{% endif %}
 				  </li>
 				</ol>
 		</nav>

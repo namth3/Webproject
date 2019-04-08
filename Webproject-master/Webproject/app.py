@@ -25,11 +25,8 @@ def find_user_post(username):
 
 @app.route("/")
 def home_page():
-    user_post_li=user_post.find().sort([("_id", -1), ("date", -1)])
-    post_list = []
-    for i in user_post_li:
-        post_list.append(i)
     post_list_ = post_list
+    # print(post_list_)
     return render_template("index.html", post_list_ = post_list_)
 
 @app.route("/about")
@@ -45,7 +42,27 @@ def image1(index):
     post_detail = post_list[index]
     return render_template("image1.html",post_detail = post_detail)
 
-
+# @app.route("/image2")
+# def image2():
+#     return render_template("image2.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content2=content2)
+# @app.route("/image3")
+# def image3():
+#     return render_template("image3.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content3=content3)
+# @app.route("/image4")
+# def image4():
+#     return render_template("image4.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content4=content4)
+# @app.route("/image5")
+# def image5():
+#     return render_template("image5.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content5=content5)
+# @app.route("/image6")
+# def image6():
+#     return render_template("image6.html",f2=f2,content6=content6)
+# @app.route("/image7")
+# def image7():
+#     return render_template("image7.html",g2=g2,content7=content7)
+# @app.route("/image8")
+# def image8():
+#     return render_template("image8.html",h2=h2,content8=content8)
 
 @app.route("/login",  methods=["GET","POST"])
 def login():
@@ -71,6 +88,7 @@ def login():
 @app.route("/logout")
 def logout():
     session.pop('logged_in', None)
+    del session["token"]
     return render_template("index.html")
 
 
@@ -117,14 +135,13 @@ def new_post():
             if Title != None:               
                 
                 add_user_post(Title,username,img_list,Name,Location,Vehicle,tipsfortravel)
-                return render_template("Dashboard.html")
+                return "Dang bai thanh cong"
             else:
                 return "Need Title"
         else:
             return render_template("post.html")
     else:
         return render_template("login.html")
-        
 
 
 
@@ -142,12 +159,15 @@ def Dashboard():
         return render_template("Dashboard.html",list_user_p=list_user_p)
     else:
         return "Need login first"
+
+
 @app.route("/dashboard/<int:index>")
 def dashboard_indx(index):
     username = session["token"]
     list_user_p = find_user_post(username)
     dashboard_detail = list_user_p[index]
     return render_template("image3.html",post_detail = dashboard_detail)
+
 
 
 if __name__ == '__main__':
