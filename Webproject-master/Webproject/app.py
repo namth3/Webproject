@@ -25,6 +25,10 @@ def find_user_post(username):
 
 @app.route("/")
 def home_page():
+    user_post_li=user_post.find().sort([("_id", -1), ("date", -1)])
+    post_list = []
+    for i in user_post_li:
+        post_list.append(i)
     post_list_ = post_list
     return render_template("index.html", post_list_ = post_list_)
 

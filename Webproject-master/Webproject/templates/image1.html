@@ -19,7 +19,7 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb" id="title">
       <li class="breadcrumb-item" ><a href="/">Home</a></li>
-       <li class="breadcrumb-item" ><a href="/post">Dashboard</a></li>
+       <li class="breadcrumb-item" ><a href="/post">Post</a></li>
       <li class="breadcrumb-item"><a href="/about">About</a></li>
       <li class="breadcrumb-item active" aria-current="page">
         {% if session['logged_in'] == True %}
@@ -40,9 +40,7 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
           <div class="carousel-item active" id="size">
                 <img src={{post_detail.img_link[0]}} class="d-block w-100" alt="...">
           </div>
-
         
-
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

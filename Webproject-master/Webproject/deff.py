@@ -6,8 +6,6 @@ user_post_li=user_post.find().sort([("_id", -1), ("date", -1)])
 post_list = []
 for i in user_post_li:
     post_list.append(i)
-    print(i["Title"])
-
 # def add(title,link1,link2,link3,link4,link5,link6,content):
 #     new={
 #         "Title":title,
@@ -58,7 +56,7 @@ for i in user_post_li:
 
 
 # def delete_by_id(id):
-#     post_collection.delete_one({'_id': ObjectId(id)})
+#     user_post.delete_one({'_id': ObjectId(id)})
 
 # for i in range(14):
 #     delete_by_id(nar[i])

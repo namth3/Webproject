@@ -37,7 +37,7 @@
 {% for post in list_user_p %}
        
         <div class="card"  id="dast">
-          <img class="card-img-top" src="{{post.img_link}}" alt="Card image cap">
+          <img class="card-img-top" src="{{post.img_link[0]}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{post.Title}}</h5>
             <a href="/detail/{{loop.index0}}" class="btn btn-primary">Go somewhere</a>
