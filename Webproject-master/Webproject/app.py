@@ -41,27 +41,7 @@ def image1(index):
     post_detail = post_list[index]
     return render_template("image1.html",post_detail = post_detail)
 
-# @app.route("/image2")
-# def image2():
-#     return render_template("image2.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content2=content2)
-# @app.route("/image3")
-# def image3():
-#     return render_template("image3.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content3=content3)
-# @app.route("/image4")
-# def image4():
-#     return render_template("image4.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content4=content4)
-# @app.route("/image5")
-# def image5():
-#     return render_template("image5.html",a2=a2,b2=b2,c2=c2,d2=d2,e2=e2,content5=content5)
-# @app.route("/image6")
-# def image6():
-#     return render_template("image6.html",f2=f2,content6=content6)
-# @app.route("/image7")
-# def image7():
-#     return render_template("image7.html",g2=g2,content7=content7)
-# @app.route("/image8")
-# def image8():
-#     return render_template("image8.html",h2=h2,content8=content8)
+
 
 @app.route("/login",  methods=["GET","POST"])
 def login():
